@@ -1,0 +1,120 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+	<title>Página con el formulario de registro como nuevo usuario</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="index.css" title="Estilo de la web">
+    <link rel="stylesheet" type="text/css" href="accesible.css" title="Estilo de la web accesible">
+    <link rel="stylesheet" type="text/css" href="impresion.css"  media="print"/>
+    <link rel="stylesheet" type="text/css" href="responsive.css" title="Estilo de la web responsive">
+
+
+
+</head>
+<body>
+
+<header id="cabecera-global">
+    <div id="container-logo">
+      <a id="logo" href="Inicio.html" title="Logo de la web. Si haces clic sobre el, irás a inicio">
+      <img id="img-logo" src="img/logo.png">
+      <img id="home" src="img/home.png">
+
+      </a>
+    </div>  
+
+    <div id="container-busqueda">     
+      <form action="./resultado_busqueda.html" method="get">
+        <label for="busqueda"><i class="material-icons cosa">search</i></label>
+        <input type="text" name="busqueda" id="busqueda" placeholder="Fotos, personas o grupos">
+          <input type="submit" id="enviar" value="Buscar" />
+        </form>
+        <a id="avanzada" href="./busqueda_avanzada.html">Búsqueda avanzada</a>
+    </div>
+
+    <div id="container-registro">
+      <form  action="Usuario_registrado.html">  
+
+        <div id="container-usuario">
+          <label for="nombre"><b>Usuario</b></label>     
+          <input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
+        </div>
+        <div id="container-psw">          
+          <label for="psw"><b>Contraseña</b></label>
+          <input type="password" placeholder="Introduce contraseña" name="psw" id="psw" required>
+          <label for="remember" > 
+            <input type="checkbox" checked="checked" id="remember"> 
+            <span id="remember-id">Remember me </span>
+          </label>
+          <a class="forgot" id="has-olvidado" href="#">¿Has olvidado tu Contraseña?</a>
+        </div>
+
+          <input type="submit" name="enviar-login" value="Login" id="login">
+            
+            <a id="texto-registro" id="registrarse-login" href="Registro.html" > Registro </a>
+          
+      </form>
+    </div>
+    
+    
+  </header> 
+
+
+	<h2 id="h2-registro">Registro</h2>
+	<form class="formulario-vertical" method="post">      
+        <p><label for="usuario"> Nombre de usuario: </label>
+          <input type="text" name="usuario" id="usuario" required>
+        </p>
+
+        <p><label for="pwd">Contraseña:</label> 
+          <input type="password" name="pwd" id="pwd" required required pattern=".{6,}" oninvalid="setCustomValidity('Campo obligatorio, debe contener minimo 6 caracteres')">
+        </p>
+
+        <p><label for="2pwd">Repite la contraseña:</label>
+          <input type="password" name="2pwd" id="2pwd" required>
+        </p>
+
+        <p><label for="email">Email:</label>
+          <input type="email" name="email" id="email" required placeholder="ej: usuario@mail.com">
+        </p>
+
+        <p id="sexo">
+          <label id="label-sexo">Sexo:</label>
+          <label id="label_masculino" for="masculino">Masculino<input type="radio" name="sexo" value="masculino" id="masculino" checked></label>
+
+          <label id="label_femenino" for="femenino">Femenino<input type="radio" name="sexo" value="femenino" id="femenino"></label>
+        </p>
+
+        <p>
+         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+         <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
+        </p>
+
+        <p>
+        <label for="ciudad">Ciudad:</label>
+         <input type="text" name="ciudad" id="ciudad"  required>
+        </p>
+
+        <p>
+          <label for="pais">País de residencia:</label>
+          <input type="text" name="pais" id="pais" required>
+        </p>
+
+        <p>
+          <label for="foto_perfil">Foto de perfil:</label>
+          <input type="file" name="foto_perfil" id="foto_perfil">
+        </p>
+
+        <p>
+          <input type="submit" class="enviar-registro" value="Enviar">
+          <input type="submit" class="enviar-registro" value="Cancelar" onclick="window.location.href='Inicio.html'">
+        </p>
+     
+  </form>
+<footer>
+    <p>Pickle &copy; 2017 </p>
+      <p>Contact information: <a href="mailto:someone@example.com">pikcle@gmail.com</a>.</p>
+  </footer>
+</body>
+</html>

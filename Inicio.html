@@ -1,0 +1,161 @@
+ <!DOCTYPE html>
+ <html lang="es">
+
+<head>	
+	<meta charset="utf-8"/>
+	<title>Página principal</title>	
+	<meta name="generator" content="Bloc de notas" /> 
+	<meta name="author" content="Sergio y Natalia" /> 
+	<meta name="keywords" content="HTML5, web" /> 
+	<meta name="description" content="Practica DAW" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="index.css" title="Estilo de la web">
+	<link rel="stylesheet" type="text/css" href="responsive.css" title="Estilo de la web responsive">
+	<link rel="stylesheet" type="text/css" href="accesible.css" title="Estilo de la web accesible">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="impresion.css"  media="print"/>
+</head>
+<body  background="img/fondo.jpg">
+	<header id="cabecera-global">
+		<div id="container-logo">
+			<a id="logo" href="Inicio.html" title="Logo de la web. Si haces clic sobre el, irás a inicio">
+			<img id="img-logo" src="img/logo.png">
+			<img id="home" src="img/home.png">
+
+			</a>
+		</div>	
+
+		<div id="container-busqueda">			
+			<form action="./resultado_busqueda.html" method="get">
+				<label for="busqueda"><i class="material-icons cosa">search</i></label>
+				<input type="text" name="busqueda" id="busqueda" placeholder="Fotos, personas o grupos">
+  				<input type="submit" id="enviar" value="Buscar" />
+  			</form>
+  			<a id="avanzada" href="./busqueda_avanzada.html">Búsqueda avanzada</a>
+		</div>
+
+		<div id="container-registro">
+			<form  action="Usuario_registrado.html">	
+
+				<div id="container-usuario">
+					<label for="nombre"><b>Usuario</b></label>		 
+					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
+				</div>
+				<div id="container-psw">					
+				 	<label for="psw"><b>Contraseña</b></label>
+					<input type="password" placeholder="Introduce contraseña" name="psw" id="psw" required>
+					<label for="remember" >	
+						<input type="checkbox" checked="checked" id="remember"> 
+						<span id="remember-id">Remember me </span>
+					</label>
+					<a class="forgot" id="has-olvidado" href="#">¿Has olvidado tu Contraseña?</a>
+				</div>
+
+					<input type="submit" name="enviar-login" value="Login" id="login">
+		    		
+		    		<a id="texto-registro" id="registrarse-login" href="Registro.html" > Registro </a>
+		    	
+			</form>
+		</div>
+		
+		
+	</header> 
+
+
+	  	<main id="cuerpo">
+
+		
+	   
+	 	<h3 id="cabecera-fotos"> Últimas fotos </h3> 
+	 	<div id="container-fotos">
+	 		<article id="primera-foto" class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto1.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto2.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto3.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto4.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto5.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto6.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto7.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto8.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto9.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			<article class="foto">
+			<a href="Detalle_foto.html"><img src="img/foto10.jpg" alt="imagen no encontrada"  ></a>  		
+			<p><strong>Titulo:</strong> inserte</p>
+			<p><strong>Fecha:</strong> 22/4/2017 </p>
+			<p><strong>País:</strong> inserte </p>
+			<i class="material-icons">access_time</i>Subida hace 4 minutos		
+			</article>
+
+			</div>
+
+		</main>
+
+	 	<footer >
+		  <p>Pickle &copy; 2017 </p>
+		  <p>Contact information: <a href="mailto:someone@example.com">pikcle@gmail.com</a>.</p>
+		</footer>
+
+</body>
+</html> 

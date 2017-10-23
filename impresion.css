@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+body{
+	font-family: 'Droid Serif', serif;
+}
+
+#container-busqueda{
+	display: block;
+	margin-left: -397px;
+	width: 700px;
+	height: 10px;
+	float: : left;
+}
+
+#container-busqueda form{
+	display: none;
+}
+
+
+#container-registro{
+	padding: 0;
+	display: block;
+	width:700px;
+	height: 160px;
+}
+
+#remember, #remember-id{
+	margin-left: -149px;
+}
+#has-olvidado{
+	margin-left: -282px;
+}
+
+#login{
+	margin-right: 5px;
+	margin-top: -7px;
+	border: #1F4882 solid 2px;
+	padding: 0.8%;
+	
+}
+
+#registrarse-login{
+	margin-bottom: -100px;
+}
+
+#container-logo{
+	display: block;
+	width: 700px;
+	height: 50px;
+	padding: 0;
+}
+
+a #logo{
+	padding: 0;
+}
+#img-logo {
+	display: inline-block;
+	width: 20%;
+	height: 10%;
+	margin-left: 275px;
+	margin-top: -30px;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+
+form p{
+	display: block;
+}
+form div{
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+form p label, div label{
+	font-weight: bold;
+	display: inline-block;
+	width: 20%;
+}
+
+input#titulo, input#pais, input#fecha{
+	margin-left: 50px;
+}
+
+form p input, #texto-adicional, input{
+	display: inline-block;
+	border-color: #000;
+	border-width: 1%;
+	
+}
+
+#label_masculino, #label_femenino{
+	margin-left: 50px;
+}
+
+#label-txt-adicional{
+	float: left;
+}
+main{
+	display: block;
+	padding: 0;
+
+}
+
+main h3{
+	text-transform: uppercase;
+	margin: 1%;
+	text-align: center;
+	font-size: 300%;
+}
+
+main article {
+    border-style: solid;
+    border-color: #000;
+	display: inline-block;
+	margin: 5%;
+	height: 250px;
+	width: 20%;
+	padding: 1%;
+}
+
+
+figure{
+	display: inline-block;
+	margin: 5%;
+	height: 20%;
+	width: 20%;
+	padding: 1%;
+}
+
+article a {
+	display: block;
+	margin: 5% auto;
+	width: 20%
+	height: 20%;
+}
+
+article a img{
+
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}
+
+table {
+	color: #000;
+	margin: auto;
+    border-collapse: collapse;
+
+}
+table, th, td{
+	border-color: #000;
+	border-style: solid;
+}
+
+th,td{
+	color: #000;
+	padding: 2%;
+	width: 60%;
+	height: 60%;
+}

@@ -1,0 +1,52 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Página de búsqueda</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="index.css" title="Estilo de la web">
+    <link rel="stylesheet" type="text/css" href="accesible.css" title="Estilo de la web accesible">
+    <link rel="stylesheet" type="text/css" href="impresion.css"  media="print"/>
+  <link rel="stylesheet" type="text/css" href="responsive.css" title="Estilo de la web responsive">
+
+<header id="cabecera-global">
+    <div id="container-logo">
+      <a id="logo" href="Inicio.html" title="Logo de la web. Si haces clic sobre el, irás a inicio">
+      <img id="img-logo" src="img/logo.png">
+            <img id="home" src="img/home.png">
+
+      </a>
+    </div>  
+
+    <div id="container-busqueda">     
+      <form action="./resultado_busqueda.html" method="get">
+        <label for="busqueda"><i class="material-icons cosa">search</i></label>
+        <input type="text" name="busqueda" id="busqueda" placeholder="Fotos, personas o grupos">
+          <input type="submit" id="enviar" value="Buscar" />
+        </form>
+        <a id="avanzada" href="./busqueda_avanzada.html">Búsqueda avanzada</a>
+    </div>
+
+      
+    
+  </header> 
+
+<h2>Búsqueda</h2>	
+		<form class="formulario-avanzada">
+		  <p><label for="titulo">Titulo:</label>
+		  <input type="search" name="titulo" id="titulo"></p>
+		  <p><label for="fecha">Fecha</label>
+		  <input type="search" name="fecha" id="fecha"></p>
+		  <p><label for="pais">País</label>
+		  <input type="search" name="pais" id="pais"></p>
+		</form>		
+	<input type="submit" class="enviar-registro" value="Buscar" onclick="window.location.href='Resultado_busqueda.html'"> 
+	<input type="submit" class="enviar-registro" value="Atrás" onclick="window.location.href='Inicio.html'"> 
+<footer>
+    <p>TITLE &copy; 2017 </p>
+    <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+  </footer>
+</body>
+</html> 

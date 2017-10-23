@@ -1,0 +1,418 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+a:link {
+    color: #0d47a1
+    /*#3F51B5*/
+    
+    ;
+    text-decoration: none;
+}
+
+
+    #container-fotos{
+        display: inline-block;
+        text-align: center;
+    }
+#label_masculino, #label_femenino{
+    margin-left: 50px;
+}
+
+a:visited {
+    color: #002171
+    /*#536DFE*/
+    
+    ;
+    text-decoration: none;
+}
+
+ .formulario-vertical p{
+    
+   
+ }
+
+.formulario-vertical p{
+    font-size: 1.1em;
+}
+
+a:hover {
+    color: #5472d3;
+    text-decoration: none;
+}
+input:focus {
+    border-color: #5472d3;
+}
+header input {
+    background-color: #f8fdff;
+}
+img {
+    border-radius: 8px;
+}
+select {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 29px;
+}
+
+#home{
+    width: 2px;
+    height: 2px;
+    visibility: hidden;
+}
+#label-nombre label {
+    margin-top: 1.8%;
+}
+#label-nombre input {
+    width: 15.5%;
+}
+#label-titulo input {
+    width: 16.5%;
+}
+
+#img-logo {
+    width: 12%;
+    height: 100px;
+    position: absolute;
+    margin-top: -0.3%;
+    padding-left: 0.5%;
+}
+#cabecera-fotos, #h2-registro {
+    display: block;
+    color: #000307;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 2.3em;
+    text-align: center;
+    margin-bottom: 1%;
+    background-color: rgb(197, 202, 233);
+    width: 20%;
+    margin: 3% auto;
+    border-radius: 5px;
+}
+ img {
+    margin-bottom: 10%;
+    width: 14.3em;
+    height: 14.3em;
+}
+#cuerpo p {
+    margin-top: -6%;
+}
+article,
+figure {
+    display: inline-block;
+    margin-left: 3%;
+    height: 120%;
+    margin-top: 3%;
+}
+.cosa {
+    top: 9px;
+    font-size: 25px !important;
+}
+i {
+    top: 2px;
+    right: 2px;
+    position: relative;
+    font-size: 15px !important;
+}
+/*cabecera de aqui para bajo*/
+
+#nombre-usuario {
+    margin-top: -3em;
+    font-size: 1em;
+}
+
+form{
+    margin-left: 3%;
+}
+
+form header {
+  margin: 0 0 5px 0;
+}
+
+#img-usuario {
+    width: 3em;
+    height: 3em;
+    margin-left: 30em;
+}
+.formulario-vertical {} #container-usuario {
+    display: inline-block;
+}
+article {
+    border-style: solid;
+    border-color: #c5cae9;
+    padding: 1%;
+    background-color: #c5cae9;
+    border-radius: 5%;
+}
+.formulario-avanzada label {
+    float: left;
+    display: block;
+    width: 5%;
+}
+.formulario-avanzada input {
+    float: none;
+    display: inline;
+}
+.formulario-vertical label {
+    float: left;
+    display: block;
+    width: 15%;
+}
+.formulario-vertical input {
+    float: none;
+    display: inline;
+}
+input {
+    background-color: #c5cae9;
+    border: 1px solid #9499b7;
+}
+textarea {
+    background-color: #c5cae9;
+    border: 1px solid #9499b7;
+}
+#container-logo {
+    float: left;
+}
+#container-busqueda {
+    padding-top: 1.5%;
+    float: left;
+    margin-left: 15%;
+    display: inline-block;
+    width: 50%;
+    padding-left: -10%;
+}
+#avanzada {
+    margin-left: 56%;
+    font-size: 1em;
+}
+#container-busqueda input[type=text] {
+    width: 70%;
+    margin-bottom: 1%;
+    border-radius: 5%;  
+    height: 2em;
+    line-height: normal;
+    padding-left: 3%;
+    margin-top: 1.5%;
+}
+th {
+    background-color: #BA8E0B;
+    color: white;
+}
+tr:hover {
+    background-color: #828282
+}
+table {
+    border: 1px solid black;
+    text-align: left;
+    margin-left: 30em;
+}
+td {
+    background-color:
+}
+th,
+td {
+    padding: 5%;
+    text-align: left;
+}
+footer {
+    margin-top: 8em;
+}
+#sexo {
+    display: inline-block;
+}
+.formulario-vertical textarea {
+    padding-left: 1%;
+    border-radius: 3%;
+    }
+.formulario-vertical input[type=text],
+.formulario-vertical input[type=search],
+.formulario-vertical input[type=password],
+.formulario-vertical input[type=email],
+.formulario-vertical input[type=date] {
+    padding-left: 1%;
+    border-radius: 10%;
+    width: 15em;
+    height: 2em;
+    }
+#container-registro input[type=password] {
+    padding-left: 3%;
+    border-radius: 5%;
+    padding-bottom: 3.4%;
+    
+    text-align: left;
+    margin-top: 2.2%;
+}
+#container-registro input[type=text] {
+    padding-left: 2%;
+    border-radius: 5%;
+    height: 40%;
+    
+}
+/*esto me deja modificar el placerholder de un input*/
+
+
+#nombre,
+#psw {
+    margin-top: 2%;
+    padding-bottom: -2%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+#container-registro {
+    float: right;
+    width: 35%;
+    font-size: 1em;
+    display: inline-block;
+    margin-right: 0.5%;
+    margin-left: -3%;
+}
+#remember-id {
+    font-size: 0.7em;
+}
+#texto-registro:hover {
+    background-color: #002171;
+    border-color: #002171;
+}
+#texto-registro {
+    font-size: 0.95em;
+    background-color: #0d47a1;
+    color: white;
+    padding: 6px 10.5px 6px 10.5px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 5px;
+    border-color: #0d47a1;
+    
+}
+.forgot {
+    font-size: 0.75em;
+}
+#container-usuario {
+    width: 40%;
+    height: 3.5em;
+    float: left;
+    margin-top: 2%;
+}
+#container-psw {
+    width: 40%;
+    float: left;
+    margin-top: 2%;
+
+}
+#container-registro label {
+    display: block;
+    font-size: 1em;
+    font-family: Roboto;
+}
+label [type="checkbox"] {
+    width: 1.1em;
+    height: 1.1em;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+#accion {
+    background-color: #A9CBEE;
+    /*background-color: rgb(54,183,198);*/
+    
+    border-radius: 15px;
+}
+#accion p {
+    font-family: Helvetica;
+    font-size: 20px;
+}
+#registrarse-login {
+    float: right;
+    margin-right: 4%;
+    margin-top: 2%;
+}
+.enviar-registro:hover {
+    background-color: #936F02;
+}
+.enviar-registro {
+    background-color: #0d47a1;
+    border: none;
+    color: #E8EAF6;
+    ;
+    padding: 0.6% 0.5%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-bottom: 2%;
+}
+#enviar:hover {
+    background-color: #002171;
+}
+input[id="enviar"] {
+    text-align: center;
+}
+#enviar {
+    background-color: #0d47a1;
+    /* Green */
+    
+    border: none;
+    color: #E8EAF6;
+    
+    padding: 0.6% 0.10%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-bottom: 2%;
+    width: 9%;
+    height: 100%;
+}
+#login {
+    background-color: #0d47a1;
+    /* Green */
+    
+    border: none;
+    color: #ffffff;
+    padding: 2% 4.8%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-top: 4%;
+    float: left;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-bottom: 2%;
+}
+#login:hover {
+    background: -webkit-linear-gradient( center top, #1e62d0 5%, #3d94f6 100%);
+    background: -moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100%);
+    background-color: #002171;
+}
+body {
+    background-color: #f8fdff;
+       
+    color: #000000;
+    font-family: Roboto-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width: 100%;
+     margin:0;
+    padding:0;
+}
+header {
+    background-color: rgba(197, 202, 233,0.9);
+    border-radius: 2%;
+    /*position: fixed; CON ESTO FIJO EL MENU ARRIBA*/
+   
+    padding-bottom: 1%;
+    color: #000000;
+    display: inline-block;
+    width: 100%;
+    letter-spacing: 0.0em;
+    
+
+
+}

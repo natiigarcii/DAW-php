@@ -1,0 +1,428 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+a:link {
+    color: #0d47a1
+    /*#3F51B5*/
+    
+    ;
+    text-decoration: none;
+}
+
+
+
+a:visited {
+    color: #002171
+    /*#536DFE*/
+    
+    ;
+    text-decoration: none;
+}
+a:hover {
+    color: #ff0800;
+    text-decoration: none;
+}
+
+article a img:hover{
+    border: solid #FFF 2px;
+}
+
+input:focus {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0c2959;
+    animation-name: blink ;
+    animation-duration: 1s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ;
+}
+
+@keyframes blink { 
+   50% { border-color: #87b0c4; } 
+}
+
+header input {
+    background-color: #f8fdff;
+}
+img {
+    border-radius: 8px;
+}
+select {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 29px;
+}
+
+#home{
+    width: 2px;
+    height: 2px;
+    visibility: hidden;
+}
+#label-nombre label {
+    margin-top: 1.8%;
+}
+#label-nombre input {
+    width: 15.5%;
+}
+#label-titulo input {
+    width: 16.5%;
+}
+
+#img-logo {
+    width: 12%;
+    height: 16%;
+    position: absolute;
+    margin-top: -0.3%;
+    padding-left: 0.5%;
+}
+#cabecera-fotos {
+    text-align: center;
+    font-size: 180%;
+} 
+
+#primera-foto {
+
+} 
+
+img {
+    margin-bottom: 10%;
+    width: 14.3em;
+    height: 14.3em;
+}
+#cuerpo p {
+    margin-top: -6%;
+}
+article,
+figure {
+    display: inline-block;
+    margin-left: 3%;
+    height: 120%;
+    margin-top: 3%;
+}
+.cosa {
+    top: 9px;
+    font-size: 25px !important;
+}
+i {
+    top: 2px;
+    right: 2px;
+    position: relative;
+    font-size: 15px !important;
+}
+/*cabecera de aqui para bajo*/
+
+#nombre-usuario {
+    margin-top: -3em;
+    font-size: 1em;
+}
+#img-usuario {
+    width: 3em;
+    height: 3em;
+    margin-left: 30em;
+}
+.formulario-vertical {} #container-usuario {
+    display: inline-block;
+}
+article {
+    display: inline-block;  
+    border-style: solid;
+    border-color: #0c2959;
+    padding: 1%;
+    background-color: #0c2959;
+    border-radius: 5%;
+}
+
+article p, article i,article{
+    color: #FFF;
+}
+.formulario-avanzada label {
+    float: left;
+    display: block;
+    width: 5%;
+}
+.formulario-avanzada input {
+    float: none;
+    display: inline;
+}
+.formulario-vertical label {
+    float: left;
+    display: block;
+    width: 15%;
+}
+.formulario-vertical input {
+    float: none;
+    display: inline;
+}
+input {
+    background-color: #FFF;
+    border: 2px solid #0c2959;
+}
+textarea {
+    background-color: #c5cae9;
+    border: 1px solid #9499b7;
+}
+#container-logo {
+    float: left;
+}
+#container-busqueda {
+    padding-top: 1.5%;
+    float: left;
+    margin-left: 15%;
+    display: inline-block;
+    width: 50%;
+    padding-left: -10%;
+}
+#busqueda, #psw, #nombre{
+    border: solid 2px #0c2959;
+}
+
+#avanzada {
+    margin-left: 56%;
+    font-size: 1em;
+}
+#container-busqueda input[type=text] {
+    width: 70%;
+    margin-bottom: 1%;
+    border-radius: 5%;  
+    height: 2em;
+    line-height: normal;
+    padding-left: 3%;
+    margin-top: 1.5%;
+}
+th {
+    background-color: #BA8E0B;
+    color: white;
+}
+tr:hover {
+    background-color: #828282
+}
+table {
+    color: #000;
+    margin: auto;
+    border-collapse: collapse;
+
+}
+table, th, td{
+    border-color: #0c2959;
+    border-style: solid;
+    background-color: #FFF;
+
+    border-radius: 5%;
+}
+
+th,td{
+    color: #000;
+    padding: 5%;
+    width: 70%;
+    height: 60%;
+}
+footer {
+    font-size: 150%;
+    margin-top: 8em;
+}
+#sexo {
+    display: inline-block;
+}
+.formulario-vertical textarea {
+    padding-left: 1%;
+    border-radius: 3%;
+    }
+.formulario-vertical input[type=text],
+.formulario-vertical input[type=search],
+.formulario-vertical input[type=password],
+.formulario-vertical input[type=email],
+.formulario-vertical input[type=date] {
+    padding-left: 1%;
+    border-radius: 10%;
+    width: 15em;
+    height: 2em;
+    }
+
+.formulario-vertical label, .formulario-avanzada label{
+    font-size: 1.3em;
+}
+
+article p{
+    font-size: 1.3em;
+}
+
+#container-registro input[type=password] {
+    padding-left: 3%;
+    border-radius: 5%;
+    padding-bottom: 3.4%;
+    
+    text-align: left;
+    margin-top: 2.2%;
+}
+#container-registro input[type=text] {
+    padding-left: 2%;
+    border-radius: 5%;
+    height: 40%;
+    
+}
+/*esto me deja modificar el placerholder de un input*/
+
+
+#nombre,
+#psw {
+    margin-top: 2%;
+    padding-bottom: -2%;
+    margin-bottom: 2%;
+    width: 80%;
+}
+#container-registro {
+    float: right;
+    width: 35%;
+    font-size: 1em;
+    display: inline-block;
+    margin-right: 0.5%;
+    margin-left: -3%;
+}
+
+#label_masculino, #label_femenino{
+    margin-left: 50px;
+}
+#remember-id {
+    font-size: 0.7em;
+}
+#texto-registro:hover {
+    background-color: #000;
+    border-color: #002171;
+}
+#texto-registro {
+    font-size: 0.95em;
+    background-color: #0d47a1;
+    color: white;
+    padding: 6px 10.5px 6px 10.5px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    border-radius: 5px;
+    border-color: #0d47a1;
+    
+}
+.forgot {
+    font-size: 0.75em;
+}
+#container-usuario {
+    width: 40%;
+    height: 3.5em;
+    float: left;
+    margin-top: 2%;
+}
+#container-psw {
+    width: 40%;
+    float: left;
+    margin-top: 2%;
+
+}
+#container-registro label {
+    display: block;
+    font-size: 1em;
+    font-family: Roboto;
+}
+label [type="checkbox"] {
+    width: 1.1em;
+    height: 1.1em;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+#accion {
+    background-color: #A9CBEE;
+    /*background-color: rgb(54,183,198);*/
+    
+    border-radius: 15px;
+}
+#accion p {
+    font-family: Helvetica;
+    font-size: 20px;
+}
+#registrarse-login {
+    float: right;
+    margin-right: 4%;
+    margin-top: 2%;
+}
+.enviar-registro:hover {
+    background-color: #936F02;
+}
+.enviar-registro {
+    background-color: #0d47a1;
+    border: none;
+    color: #E8EAF6;
+    ;
+    padding: 0.6% 0.5%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-bottom: 2%;
+}
+#enviar:hover {
+    background-color: #000;
+}
+input[id="enviar"] {
+    text-align: center;
+}
+#enviar {
+    background-color: #0d47a1;
+    /* Green */
+    
+    border: none;
+    color: #E8EAF6;
+    
+    padding: 0.6% 0.10%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-bottom: 2%;
+    width: 9%;
+    height: 100%;
+}
+#login {
+    background-color: #0d47a1;
+    /* Green */
+    
+    border: none;
+    color: #ffffff;
+    padding: 2% 4.8%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-top: 4%;
+    float: left;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-bottom: 2%;
+}
+#login:hover {
+    background: -webkit-linear-gradient( center top, #1e62d0 5%, #3d94f6 100%);
+    background: -moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100%);
+    background-color: #000;
+}
+body {
+    background-color: #f4f8ff;
+    padding: 2em;
+    color: #000000;
+    font-family: Roboto-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header {
+    background-color: #dee7f7;
+    border: 2px solid #0c2959;
+    border-radius: 2%;
+    /*position: fixed; CON ESTO FIJO EL MENU ARRIBA*/
+    
+    padding-bottom: 1%;
+    color: #000000;
+    display: inline-block;
+    width: 100%;
+    letter-spacing: 0.0em;
+}
