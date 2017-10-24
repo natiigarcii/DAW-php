@@ -1,30 +1,28 @@
 <?php
+session_start();	
 $title = "Menú de usuario - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
-?>
 
 
-<?php
-	$_SESSION["remember"] = $_POST["remember"];
+
+
+ 
+	session_start();	
 	$_SESSION["nombre"] = $_POST["nombre"];
 	$_SESSION["psw"] = $_POST["psw"];
 	
-	setcookie('remember', $_SESSION["remember"], (time() + 365 * 24 * 60 * 60));
 	
-	if(($_POST['nombre']) == "natalia" && ($_POST['psw']) == "natalia" ){
-		if(isset($_SESSION["remember"])){
-			setcookie('nombre', $_SESSION["nombre"], (time() + 365 * 24 * 60 * 60));
-			//setcookie("fechaUltimaVisita", date("d-m-y H:i:s"), (time() + 365 * 24 * 60 * 60));
-		}
-		header('Location: inicio.php');
-	}else{
-		header('Location: inicio.php');		
+	if(($_POST['nombre']) == "natalia" && ($_POST['psw']) == "natalia" ){		
+		header('Location: usuario_registrado.php');
+	}else{			
+		header('Location: inicio.php');	
+		
 	}
-?>
 
 
 
-<?php
+
+
 require_once("footer.inc");
 ?>	

@@ -1,5 +1,5 @@
 <?php
-$title = "Inicio - Pickle";
+$title = "Registro - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
 ?>
