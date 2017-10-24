@@ -3,7 +3,7 @@ $title = "Crear Album - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
 ?>
-
+<h2>Crea tu álbum:</h2>
 <form class="formulario-vertical" method="post">
 
       <p id="label-titulo"><label for="titulo">Titulo del album:</label> 

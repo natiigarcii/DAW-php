@@ -6,8 +6,8 @@ require_once("inicio.inc");
 
 <p><a href="#">Darme de baja</a></p>
 <p><a href="#">Mis albumes</a></p>
-<p><a href="#">Crear album</a></p>
-<p><a href="Solicitar_album.html">Solicitar album</a></p>
+<p><a href="./crear_album.php">Crear album</a></p>
+<p><a href="/solicitar_album.php">Solicitar album</a></p>
 
 
 <?php
