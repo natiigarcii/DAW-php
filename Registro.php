@@ -5,13 +5,13 @@ require_once("inicio.inc");
 ?>
 
 <h2 id="h2-registro">Registro</h2>
-	<form class="formulario-vertical" method="post">      
+	<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
         <p><label for="usuario"> Nombre de usuario: </label>
           <input type="text" name="usuario" id="usuario" required>
         </p>
 
         <p><label for="pwd">Contraseña:</label> 
-          <input type="password" name="pwd" id="pwd" required required pattern=".{6,}" oninvalid="setCustomValidity('Campo obligatorio, debe contener minimo 6 caracteres')">
+          <input type="password" name="pwd" id="pwd" required >
         </p>
 
         <p><label for="2pwd">Repite la contraseña:</label>
