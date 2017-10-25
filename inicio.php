@@ -9,7 +9,7 @@ require_once("inicio.inc");
 <div id="container-fotos">
 
 	 <article id="primera-foto" class="foto">
-		<a href="Detalle_foto.html"><img src="img/foto1.jpg" alt="imagen no encontrada"  ></a>  		
+		<a href="detalle_foto.php?id=2"><img src="img/foto1.jpg" alt="imagen no encontrada"  ></a>  		
 		<p><strong>Titulo:</strong> inserte</p>
 		<p><strong>Fecha:</strong> 22/4/2017 </p>
 		<p><strong>País:</strong> inserte </p>
@@ -17,7 +17,7 @@ require_once("inicio.inc");
 	</article>
 
 	<article class="foto">
-		<a href="Detalle_foto.html"><img src="img/foto2.jpg" alt="imagen no encontrada"  ></a>  		
+		<a href="detalle_foto.php?id=1"><img src="img/foto2.jpg" alt="imagen no encontrada"  ></a>  		
 		<p><strong>Titulo:</strong> inserte</p>
 		<p><strong>Fecha:</strong> 22/4/2017 </p>
 		<p><strong>País:</strong> inserte </p>

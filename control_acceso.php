@@ -11,6 +11,7 @@ require_once("inicio.inc");
 	session_start();	
 	$_SESSION["nombre"] = $_POST["nombre"];
 	$_SESSION["psw"] = $_POST["psw"];
+	$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
 	
 	
 	if(($_POST['nombre']) == "natalia" && ($_POST['psw']) == "natalia" ){		

@@ -44,10 +44,20 @@ session_start();
 				}
 				
 				else{
+
+				
 			?>
 				<div id="container-usuario">
 					<label for="nombre"><b>Usuario</b></label>		 
 					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
+					<?php
+						if (isset($_SESSION['message']))
+					{
+	    				echo $_SESSION['message'];
+	    				unset($_SESSION['message']);
+					}
+					?>
+
 				</div>
 				<div id="container-psw">					
 				 	<label for="psw"><b>Contraseña</b></label>
