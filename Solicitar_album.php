@@ -40,7 +40,7 @@ require_once("inicio.inc");
 
 <form class="formulario-vertical" action="Solicitar_album_respuesta.php" method="post">
 		  <p id="label-nombre"><label for="nombre" >Nombre:</label> 
-		  <input type="text" maxlength="200" required name="nombre" id="nombre" placeholder="su nombre"></p>
+		  <input type="text" maxlength="50" required name="nombre" id="nombre" placeholder="su nombre"></p>
 
 		  <p id="label-titulo"><label for="titulo">Titulo del album</label> 
 		  <input type="search" maxlength="200" required name="titulo" id="titulo" placeholder="que lo describa"></p>
