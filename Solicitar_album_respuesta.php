@@ -8,8 +8,8 @@ require_once("inicio.inc");
 <h3>Álbum solicitado con los siguientes datos:</h3>
 <form class="formulario-vertical">
 	<p>
-		<label for="nombre">Nombre del álbum:</label> 
-     	<input type="text" name="nombre" id="nombre" disabled value="<?php echo $_POST["nombre"];?>">
+		<label for="nombre-usuario">Nombre del álbum:</label> 
+     	<input type="text" name="nombre-album" id="nombre-album" disabled value="<?php echo $_POST["nombre"];?>">
     </p>
     <p>
 		<label for="titulo">Título:</label> 
