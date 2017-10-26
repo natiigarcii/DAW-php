@@ -101,8 +101,8 @@ require_once("inicio.inc");
 
 
      	 	<p><label>¿Impresión a color?</label>
-     	 		<input type="checkbox" name="color"  value="color">Color
-     	 		<input type="checkbox" name="color" value="blancoynegro">Blanco y negro
+     	 		<input type="radio" name="color" value="color" checked>Color 
+  				<input type="radio" name="color" value="blancoynegro">Blanco y negro
 
      	 	</p>
 

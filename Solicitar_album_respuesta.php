@@ -3,6 +3,8 @@ $title = "Solicitar álbum respuesta - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
 ?>
+
+
 <h3>Álbum solicitado con los siguientes datos:</h3>
 <p>
 Nombre álbum: <b><?php echo $_POST["nombre"];?></b>
@@ -54,7 +56,27 @@ Impresion en: <b><?php echo $_POST["color"];?></b>
 </p>
 <h4>Precio Final</h4>
 <p>
-
+<?php
+$paginas = 10;
+$fotos= 10;
+$precio_final = 0;
+if ($paginas < 4){
+	$precio_final = $paginas * 0.10;
+} 
+if($paginas >= 5 && $paginas < 11){
+	$precio_final = $paginas * 0.08;
+}
+if($paginas > 10){
+	$precio_final = $paginas * 0.07;
+}
+if($_POST["color"] == "color"){
+	$precio_final = $precio_final + $fotos * 0.05;
+}
+if ($_POST["resolucion"] >= 300) {
+	$precio_final = $precio_final + $fotos * 0.02;
+}
+echo $precio_final . "€";
+?>
 </p>
  <?php
 require_once("footer.inc");
