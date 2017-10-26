@@ -20,44 +20,39 @@
 		</div>
 
 		<div id="container-registro">
-			<form  action="control_acceso.php" method="GET">
+			<form  action="control_acceso.php" method="POST">
 
 
-			<!-- <?php				
+			<?php				
 
-				//if($id == null || $id!=1){				
+				
+				$id = (isset($_GET['id']));			
 
-				//if((isset($_SESSION["nombre"]) && $_SESSION["nombre"] == 
-					//"natalia" && $_SESSION["psw"] == "natalia"){
-					//echo "<p>Hola " . $_SESSION["nombre"] . ", Bienvenido</p>";
-					//}
+				if($id==1){
+					echo "<p>Hola, Bienvenido</p>";
+					
 			?>
 
-					//<a href="./album.php">Crear álbum</a>
-					//</br>
-					//<a href="./inicio.php">Ver perfil</a>
-					//</br>
-					//<a href="./cerrarsesion.php">Cerrar sesión</a>
+					<a href="./album.php">Crear álbum</a>
+					</br>
+					<a href="./inicio.php">Ver perfil</a>
+					</br>
+					<a href="./cerrarsesionn.php">Cerrar sesión</a>
 				
 							
 			<?php
 					
-				//}
+				}
 				
-				//else{
+				else{
 
 				
-			?>-->
+			?>
 				<div id="container-usuario">
 					<label for="nombre"><b>Usuario</b></label>		 
 					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
 
-					<!--<?php
-						//if (isset($_SESSION['message'])){
-	    					//echo $_SESSION['message'];
-	    					//unset($_SESSION['message']);
-					//	}
-					?>-->
+					
 
 				</div>
 				<div id="container-psw">					
@@ -73,9 +68,9 @@
 					<input type="submit" name="enviar-login" value="Login" id="login">
 		    		
 		    		<a id="texto-registro" id="registrarse-login" href="Registro.php" > Registro </a>
-		    		 <!--<?php
-				//}
-			?>-->
+		    		 <?php
+				}
+			?>
 		    	
 			</form>
 		</div>
