@@ -5,6 +5,11 @@ require_once("inicio.inc");
 ?>
 
 <h2 id="h2-registro">Registro</h2>
+<?php
+  if( isset($_GET['psw']) == 1){
+    echo '<p class="m_error">Las contraseñas no coinciden</p>';
+  }
+?>
 	<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
         <p><label for="usuario"> Nombre de usuario: </label>
           <input type="text" name="usuario" id="usuario" required>

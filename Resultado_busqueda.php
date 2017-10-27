@@ -19,7 +19,7 @@ require_once("inicio.inc");
 	}
 ?>
 	<figure class="foto">
-		<a href="Detalle_foto.html"><img src="img/foto6.jpg" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
+		<a href="Detalle_foto.php?id=11"><img src="img/foto6.jpg" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
 		<p><strong>Título:</strong> inserte</p>
 		<p><strong>Fecha:</strong> 22/4/2017 </p>
 		<p><strong>País:</strong> inserte </p>
@@ -27,7 +27,7 @@ require_once("inicio.inc");
 	</figure>
 
 	<figure class="foto">
-		<a href="Detalle_foto.html"><img src="img/foto7.jpg" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
+		<a href="Detalle_foto.php?id=20"><img src="img/foto7.jpg" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
 		<p><strong>Título:</strong> inserte</p>
 		<p><strong>Fecha:</strong> 22/4/2017 </p>
 		<p><strong>País:</strong> inserte </p>
@@ -35,7 +35,7 @@ require_once("inicio.inc");
 	</figure>
 
 	<figure class="foto">
-		<a href="Detalle_foto.html"><img src="img/foto8.jpg" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
+		<a href="Detalle_foto.php?id=3"><img src="img/foto8.jpg" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
 		<p><strong>Título:</strong> inserte</p>
 		<p><strong>Fecha:</strong> 22/4/2017 </p>
 		<p><strong>País:</strong> inserte </p>

@@ -1,5 +1,3 @@
-
-
 <body>
 	<header id="cabecera-global">
 		<div id="container-logo">
@@ -23,14 +21,11 @@
 			<form  action="control_acceso.php" method="POST">
 
 
-			<?php				
-
-				
-				$id = (isset($_GET['id']));			
+			<?php		
+				$id = (isset($_GET['id']));	
 
 				if($id==1){
-					echo "<p>Hola, Bienvenido</p>";
-					
+					echo "<p>Hola, Bienvenid@</p>";
 			?>
 
 					<a href="./album.php">Crear álbum</a>
@@ -53,7 +48,6 @@
 					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
 
 					
-
 				</div>
 				<div id="container-psw">					
 				 	<label for="psw"><b>Contraseña</b></label>

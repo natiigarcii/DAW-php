@@ -9,8 +9,7 @@ $user2 = array("natalia", "natalia");
 $user3 = array("sergio", "pato");	
 
 	$nombre = $_POST["nombre"];
- 	$psw = $_POST["psw"];
-		
+ 	$psw = $_POST["psw"];	
 
 
  	if(	($nombre==$user1[0] && $psw == $user1[1]) || ($nombre==$user2[0] && $psw == $user2[1]) || ($nombre==$user3[0] && $psw == $user3[1])){
@@ -19,9 +18,8 @@ $user3 = array("sergio", "pato");
  		exit;
  	}
 
- 	else{
- 			
- 		header('Location: inicio.php?id=0');
+ 	else{ 		
+ 		header('Location: inicio.php');
  		exit;
  	}
 

@@ -7,7 +7,9 @@ a:link {
     text-decoration: none;
 }
 
-
+.m_error{
+    color: #ff0800;
+}
 
 
     #container-fotos{
@@ -90,8 +92,6 @@ select {
     margin: 3% auto;
     border-radius: 5px;
 }
-
-
 
 
  img {
@@ -400,7 +400,7 @@ input[id="enviar"] {
 body {
     background-color: #f8fdff;
        
-    color: #000000;
+    color: orange;
     font-family: Roboto-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
     max-width: 100%;
      margin:0;

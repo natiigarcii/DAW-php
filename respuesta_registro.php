@@ -18,6 +18,13 @@ require_once("inicio.inc");
           <input type="password" name="2pwd" id="2pwd" disabled value="<?php echo $_POST["2pwd"];?>">
         </p>
 
+        <?php
+          if ($_POST["pwd"] != $_POST["2pwd"]) {
+            echo "Las contraseñas no coinciden";
+            header('Location: registro.php?psw=1');
+          }
+        ?>
+
         <p><label for="email">Email:</label>
           <input type="email" name="email" id="email" disabled value="<?php echo $_POST["email"];?>">
         </p>
