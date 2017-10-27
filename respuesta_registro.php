@@ -20,7 +20,7 @@ require_once("inicio.inc");
 
         <?php
           if ($_POST["pwd"] != $_POST["2pwd"]) {
-            echo "Las contraseñas no coinciden";
+           
             header('Location: registro.php?psw=1');
           }
         ?>

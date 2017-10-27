@@ -9,6 +9,9 @@ a:link {
 
 .m_error{
     color: #ff0800;
+    margin-left: 6%;
+    margin-bottom: 3%;
+    font-weight: bold;
 }
 
 
@@ -400,7 +403,7 @@ input[id="enviar"] {
 body {
     background-color: #f8fdff;
        
-    color: orange;
+    color: #000;
     font-family: Roboto-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
     max-width: 100%;
      margin:0;

@@ -7,7 +7,7 @@ require_once("inicio.inc");
 <h2 id="h2-registro">Registro</h2>
 <?php
   if( isset($_GET['psw']) == 1){
-    echo '<p class="m_error">Las contraseñas no coinciden</p>';
+    echo '<p class="m_error"> <label for="pwd">  Las contraseñas no coinciden </label> </p>';
   }
 ?>
 	<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
