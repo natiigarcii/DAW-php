@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <body>
 	<header id="cabecera-global">
 		<div id="container-logo">
@@ -20,33 +24,48 @@
 		<div id="container-registro">
 			<form  action="control_acceso.php" method="POST">
 
-
-			<?php		
-				$id = (isset($_GET['id']));	
-
-				if($id==1){
-					echo "<p>Hola, Bienvenid@</p>";
-			?>
-
-					<a href="./album.php">Crear álbum</a>
-					</br>
-					<a href="./inicio.php">Ver perfil</a>
-					</br>
-					<a href="./cerrarsesionn.php">Cerrar sesión</a>
-				
-							
 			<?php
+				
+				if((isset($_SESSION["nombre"]) && $_SESSION["nombre"] == "natalia" && $_SESSION["psw"] == "natalia") || isset($_COOKIE["nombre"])){
 					
+					if(isset($_SESSION["remember"]) || isset($_COOKIE["remember"])){
+						$nombre = $_COOKIE["nombre"];
+						if(isset($_COOKIE["fechaUltimaVisita"])){
+							$fecha =  $_COOKIE["fechaUltimaVisita"];
+							echo "<p>Hola " . $nombre . ", su última visita fue el " . $fecha . "</p>";
+						}else{
+							echo "<p>Hola " . $nombre . ", es tu primera visita. Bienvenido </p>";
+						}
+						?>	
+							<a href="./album.php">Crear álbum</a>
+							</br>
+							<a href="./inicio.php">Ver perfil</a>
+							</br>
+							<a href="./cerrarsesion.php">Cerrar sesión</a>
+						<?php
+					}else{
+						echo "<p>Hola " . $_SESSION["nombre"] . ", usted ha elegido no guardar su sesión</p>";
+						?>
+							<a href="./album.php">Crear álbum</a>
+							</br>
+							<a href="./inicio.php">Ver perfil</a>
+							</br>
+							<a href="./cerrarsesion.php">Cerrar sesión</a>
+						<?php
+					}
 				}
 				
 				else{
-
-				
 			?>
 				<div id="container-usuario">
 					<label for="nombre"><b>Usuario</b></label>		 
 					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
-
+					<?php
+						if (isset($_SESSION['message'])){
+	    					echo $_SESSION['message'];
+	    					unset($_SESSION['message']);
+						}
+					?>
 					
 				</div>
 				<div id="container-psw">					
