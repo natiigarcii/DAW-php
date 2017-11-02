@@ -25,17 +25,31 @@ session_start();
 			<form  action="control_acceso.php" method="POST">
 
 			<?php
+
+
+				if(isset($_COOKIE["fechaUltimaVisita"])){
+					setcookie("fechaUltimaVisita"," ",time()-3600);
+					$fecha =  $_COOKIE["fechaUltimaVisita"];
+						echo "<p>Hola " . $_COOKIE['nombre'] . ", su última visita fue el " . $fecha . ", ¿deseas iniciar sesión? </p>"; 
+						
+						?>
+						
+						<a href="/control_acceso.php?opc=1">Iniciar</a>
+						<a href="/inicio.php">Cancelar</a>
+						<?php
+
+				}
+
+				else{
+
+
+			
 				
 				if(isset($_SESSION["nombre"])){
 					
 					if(isset($_SESSION["remember"]) || isset($_COOKIE["remember"])){
 						$nombre = $_COOKIE["nombre"];
-						if(isset($_COOKIE["fechaUltimaVisita"])){
-							$fecha =  $_COOKIE["fechaUltimaVisita"];
-							echo "<p>Hola " . $nombre . ", su última visita fue el " . $fecha . "</p>";
-						}else{
-							echo "<p>Hola " . $nombre . ", es tu primera visita. Bienvenido </p>";
-						}
+						echo "<p>Hola " . $_SESSION["nombre"] . "</p>";
 						?>	
 							<a href="./crear_album.php">Crear álbum</a>
 							</br>
@@ -83,6 +97,7 @@ session_start();
 		    		<a id="texto-registro" id="registrarse-login" href="Registro.php" > Registro </a>
 		    		 <?php
 				}
+			}
 			?>
 		    	
 			</form>
