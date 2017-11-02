@@ -24,12 +24,16 @@ require_once("inicio.inc");
 
 	foreach ($usuarios as $usuario) {
 		if(($_POST['nombre']) == $usuario["nombre"] && ($_POST['psw']) == $usuario["pwd"]  ){
-		if(isset($_SESSION["remember"])){
-			setcookie('nombre', $_SESSION["nombre"], (time() + 365 * 24 * 60 * 60));
-			//setcookie("fechaUltimaVisita", date("d-m-y H:i:s"), (time() + 365 * 24 * 60 * 60));
-		}
+		
+			if(isset($_SESSION["remember"])){
+				setcookie('nombre', $_SESSION["nombre"], (time() + 365 * 24 * 60 * 60));
+				//setcookie("fechaUltimaVisita", date("d-m-y H:i:s"), (time() + 365 * 24 * 60 * 60));
+			}
+
 		header('Location: usuario_registrado.php');
-		}else{
+		}
+
+		else{
 		header('Location: inicio.php');		
 		}
 	}

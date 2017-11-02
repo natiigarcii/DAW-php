@@ -37,18 +37,18 @@ session_start();
 							echo "<p>Hola " . $nombre . ", es tu primera visita. Bienvenido </p>";
 						}
 						?>	
-							<a href="./album.php">Crear álbum</a>
+							<a href="./crear_album.php">Crear álbum</a>
 							</br>
-							<a href="./inicio.php">Ver perfil</a>
+							<a href="./usuario_registrado.php">Ver perfil</a>
 							</br>
 							<a href="./cerrarsesion.php">Cerrar sesión</a>
 						<?php
 					}else{
 						echo "<p>Hola " . $_SESSION["nombre"] . ", usted ha elegido no guardar su sesión</p>";
 						?>
-							<a href="./album.php">Crear álbum</a>
+							<a href="./crear_album.php">Crear álbum</a>
 							</br>
-							<a href="./inicio.php">Ver perfil</a>
+							<a href="./usuario_registrado.php">Ver perfil</a>
 							</br>
 							<a href="./cerrarsesion.php">Cerrar sesión</a>
 						<?php

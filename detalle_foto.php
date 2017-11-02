@@ -5,7 +5,7 @@ require_once("inicio.inc");
 
 $id = $_GET['id'];
 
-if(((isset($_COOKIE["nombre"]) && $_COOKIE["nombre"] == "natalia")) || ((isset($_SESSION["nombre"]) && $_SESSION["nombre"] == "natalia"))){
+if(isset($_SESSION["nombre"])){
 
 	if(($id % 2)==0){
 	?>
