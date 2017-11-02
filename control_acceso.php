@@ -6,10 +6,10 @@ require_once("inicio.inc");
 
 	
 	$usuarios  = array(
-		array("nombre" =>"natalia"	,"pwd" =>"natalia"	),
-		array("nombre" =>"sergio"	,"pwd" =>"pato"		),
-		array("nombre" =>"u1"		,"pwd" =>"u1"		),
-		array("nombre" =>"root"		,"pwd" =>"root"		)
+		array("natalia"	,"natalia"	),
+		array("sergio"	,"pato"		),
+		array("u1"		,"u1"		),
+		array("root"	,"root"		)
 		);
 
 	$_SESSION["remember"] = $_POST["remember"];
@@ -23,14 +23,16 @@ require_once("inicio.inc");
 
 
 	foreach ($usuarios as $usuario) {
-		if(($_POST['nombre']) == $usuario["nombre"] && ($_POST['psw']) == $usuario["pwd"]  ){
+		if(($_POST['nombre']) == $usuario[0] && ($_POST['psw']) == $usuario[1]  ){
 		
 			if(isset($_SESSION["remember"])){
 				setcookie('nombre', $_SESSION["nombre"], (time() + 365 * 24 * 60 * 60));
 				//setcookie("fechaUltimaVisita", date("d-m-y H:i:s"), (time() + 365 * 24 * 60 * 60));
 			}
 
+
 		header('Location: usuario_registrado.php');
+		break;
 		}
 
 		else{
