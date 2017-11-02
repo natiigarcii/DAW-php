@@ -26,7 +26,7 @@ session_start();
 
 			<?php
 				
-				if((isset($_SESSION["nombre"]) && $_SESSION["nombre"] == "natalia" && $_SESSION["psw"] == "natalia") || isset($_COOKIE["nombre"])){
+				if(isset($_SESSION["nombre"])){
 					
 					if(isset($_SESSION["remember"]) || isset($_COOKIE["remember"])){
 						$nombre = $_COOKIE["nombre"];
