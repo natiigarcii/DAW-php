@@ -21,29 +21,26 @@ session_start();
   			<a id="avanzada" href="./busqueda_avanzada.php">Búsqueda avanzada</a>
 		</div>
 
-		<div id="container-registro">
-			<form  action="control_acceso.php" method="POST">
 
-			<?php
+		<?php
 
 
 				if(isset($_COOKIE["fechaUltimaVisita"])){
-					setcookie("fechaUltimaVisita"," ",time()-3600);
 					$fecha =  $_COOKIE["fechaUltimaVisita"];
-						echo "<p>Hola " . $_COOKIE['nombre'] . ", su última visita fue el " . $fecha . ", ¿deseas iniciar sesión? </p>"; 
-						
-						?>
-						
-						<a href="/control_acceso.php?opc=1">Iniciar</a>
-						<a href="/inicio.php">Cancelar</a>
-						<?php
-
+					setcookie("fechaUltimaVisita"," ",time()-3600);
+					echo "<p>Hola " . $_COOKIE['nombre'] . ", su última visita fue el " . $fecha . ", ¿deseas iniciar sesión? </p>"; 
+					echo $_COOKIE['nombre'] ." " . $_COOKIE['psw'];
+		?>
+					<a href="/control_acceso.php">Iniciar</a>
+					<a href="/cerrarsesion.php">Cancelar</a>
+				<?php
 				}
-
 				else{
+				?>
 
-
-			
+			<div id="container-registro">
+			<form  action="control_acceso.php" method="POST">
+				<?php
 				
 				if(isset($_SESSION["nombre"])){
 					

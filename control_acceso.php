@@ -12,21 +12,20 @@ require_once("inicio.inc");
 		array("root"	,"root"		)
 		);
 
-	$_SESSION["remember"] = $_POST["remember"];
-	
-	$_SESSION["nombre"] = $_POST["nombre"];
-	$_SESSION["psw"] = $_POST["psw"];
-	$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
-
-	$longitud = count($array);
-	setcookie('remember', $_SESSION["remember"], (time() + 365 * 24 * 60 * 60));
-
 
 	foreach ($usuarios as $usuario) {
 		if(($_POST['nombre']) == $usuario[0] && ($_POST['psw']) == $usuario[1]  ){
 		
-			if(isset($_SESSION["remember"])){
-				setcookie('nombre', $_SESSION["nombre"], (time() + 365 * 24 * 60 * 60));
+			if(isset($_POST["remember"])){
+
+				$_SESSION["remember"] = $_POST["remember"];
+				$_SESSION["nombre"] = $_POST["nombre"];
+				$_SESSION["psw"] = $_POST["psw"];
+				$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
+				setcookie('remember', $_SESSION["remember"], (time() + 365 * 24 * 60 * 60));
+
+				setcookie('nombre', $_POST["nombre"], (time() + 365 * 24 * 60 * 60));
+				setcookie('psw', $_POST["psw"], (time() + 365 * 24 * 60 * 60));
 				//setcookie("fechaUltimaVisita", date("d-m-y H:i:s"), (time() + 365 * 24 * 60 * 60));
 			}
 
