@@ -20,43 +20,18 @@ session_start();
   			</form>
   			<a id="avanzada" href="./busqueda_avanzada.php">Búsqueda avanzada</a>
 		</div>
-
-
-		<?php
-
-
-				if(isset($_COOKIE["fechaUltimaVisita"])){
-					$fecha =  $_COOKIE["fechaUltimaVisita"];
-					setcookie("fechaUltimaVisita"," ",time()-3600);
-					echo "<p>Hola " . $_COOKIE['nombre'] . ", su última visita fue el " . $fecha . ", ¿deseas iniciar sesión? </p>"; 
-					echo $_COOKIE['nombre'] ." " . $_COOKIE['psw'];
-		?>
-					<a href="/control_acceso.php">Iniciar</a>
-					<a href="/cerrarsesion.php">Cancelar</a>
-				<?php
-				}
-				else{
-				?>
+		
 
 			<div id="container-registro">
 			<form  action="control_acceso.php" method="POST">
 				<?php
-				
-				if(isset($_SESSION["nombre"])){
-					
-					if(isset($_SESSION["remember"]) || isset($_COOKIE["remember"])){
-						$nombre = $_COOKIE["nombre"];
-						echo "<p>Hola " . $_SESSION["nombre"] . "</p>";
+				if(isset($_COOKIE["nombre"])){
+					if(isset($_COOKIE["remember"])){
+						if(isset($_COOKIE["fechaUltimaVisita"])){
+							$fecha =  $_COOKIE["fechaUltimaVisita"];
+							echo "<p>Hola " . $_COOKIE['nombre'] . ", su última visita fue el " . $fecha . "</p>"; 
+						}
 						?>	
-							<a href="./crear_album.php">Crear álbum</a>
-							</br>
-							<a href="./usuario_registrado.php">Ver perfil</a>
-							</br>
-							<a href="./cerrarsesion.php">Cerrar sesión</a>
-						<?php
-					}else{
-						echo "<p>Hola " . $_SESSION["nombre"] . ", usted ha elegido no guardar su sesión</p>";
-						?>
 							<a href="./crear_album.php">Crear álbum</a>
 							</br>
 							<a href="./usuario_registrado.php">Ver perfil</a>
@@ -67,6 +42,19 @@ session_start();
 				}
 				
 				else{
+
+					if(isset($_SESSION["nombre"])){
+							echo "<p>Hola " . $_SESSION["nombre"] . ", usted ha elegido no guardar su sesión</p>";
+						?>	
+
+							<a href="./crear_album.php">Crear álbum</a>
+							</br>
+							<a href="./usuario_registrado.php">Ver perfil</a>
+							</br>
+							<a href="./cerrarsesion.php">Cerrar sesión</a>
+						<?php
+					}
+					else{
 			?>
 				<div id="container-usuario">
 					<label for="nombre"><b>Usuario</b></label>		 
@@ -93,8 +81,8 @@ session_start();
 		    		
 		    		<a id="texto-registro" id="registrarse-login" href="Registro.php" > Registro </a>
 		    		 <?php
+		    		}
 				}
-			}
 			?>
 		    	
 			</form>
