@@ -6,6 +6,9 @@ require_once("inicio.inc");
 
 <h2 id="h2-registro">Registro</h2>
 <?php
+
+
+
   if( isset($_GET['psw']) == 1){
     echo '<p class="m_error"> <label for="pwd">  Las contraseñas no coinciden </label> </p>';
   }
@@ -46,7 +49,37 @@ require_once("inicio.inc");
 
         <p>
           <label for="pais">País de residencia:</label>
-          <input type="text" name="pais" id="pais" required>
+          <select id="pais">
+
+            <?php
+            /*
+              // Conecta con el servidor de MySQL
+              $link = @mysqli_connect('localhost','usuario','contrasenya', 'bd');
+              if(!$link) {
+                echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
+                echo '</p>';
+                exit;
+              } 
+              // Ejecuta una sentencia SQL
+              
+              $sentencia = 'SELECT nombre_pais FROM Paises';
+              if(!($resultado = @mysqli_query($link, $sentencia))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+                echo ’</p>’;
+              exit;
+              } 
+              
+              // Recorre el resultado
+              while($fila = mysqli_fetch_assoc($resultado)) {
+              echo '<option value="' . $fila . '">' . $fila . '</option>' ;   
+              }
+
+              mysqli_free_result($resultado);
+              // Cierra la conexión
+              mysqli_close($link);
+            */
+            ?>
+          </select>
         </p>
 
         <p>
