@@ -212,14 +212,15 @@ tr:hover {
 table {
     border: 1px solid black;
     text-align: left;
-    margin-left: 30em;
+    margin-left: 10em;
+    width: 60%;
 }
 td {
     background-color:
 }
 th,
 td {
-    padding: 5%;
+    padding: 3%;
     text-align: left;
 }
 footer {

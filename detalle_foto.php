@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 if(isset($_SESSION["nombre"])){
 
-	if(($id % 2)==0){
+	if(($id % 2)!=0){
 	?>
 		<h2>Página detalle foto</h2>
 		<figure class="foto_grande">

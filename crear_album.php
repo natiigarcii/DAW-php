@@ -18,8 +18,37 @@ require_once("inicio.inc");
      </p>
       <p>
           <label for="pais">País:</label>
-          <input type="text" name="pais" id="pais" required>
-      </p>
+ <select id="pais" name="pais">
+
+            <?php
+            
+              // Conecta con el servidor de MySQL
+              $link = @mysqli_connect('localhost','root','admin', 'pibd');
+              if(!$link) {
+                echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
+                echo '</p>';
+                exit;
+              } 
+              // Ejecuta una sentencia SQL
+              
+              $sentencia = 'SELECT nomPais FROM paises order by nomPais asc';
+              if(!($resultado = @mysqli_query($link, $sentencia))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+                echo '</p>';
+              exit;
+              } 
+              
+              // Recorre el resultado
+              while($fila = mysqli_fetch_assoc($resultado)) {
+              echo '<option value="' . $fila['nomPais'] . '">' . $fila['nomPais'] . '</option>' ;   
+              }
+
+              mysqli_free_result($resultado);
+              // Cierra la conexión
+              mysqli_close($link);
+            
+            ?>
+          </select>      </p>
      <p>
        <input type="submit" class="enviar-registro" value="Crear">
        <input type="submit" class="enviar-registro" value="Cancelar">

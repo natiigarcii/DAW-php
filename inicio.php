@@ -6,6 +6,53 @@ require_once("inicio.inc");
 
 <h3 id="cabecera-fotos"> Últimas fotos </h3> 
 
+<?php
+    // Conecta con el servidor de MySQL
+    $link = @mysqli_connect('localhost', 'root', 'admin', 'pibd');
+    if (!$link) {
+        echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
+        echo '</p>';
+        exit;
+    }
+
+     $sentencia = 'SELECT * FROM fotos ORDER BY fRegistro DESC LIMIT 5';
+      if (!($resultado = @mysqli_query($link, $sentencia))) {
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+        echo '</p>';
+        exit;
+    }
+
+echo '<div id="container-fotos">';
+
+    while ($fila = mysqli_fetch_assoc($resultado)) {
+    	$id = $fila['idFoto'];
+    	$sentencia2 = "SELECT * FROM paises,fotos WHERE idPais = pais AND idFoto = '$id'";
+    	if (!($resultado2 = @mysqli_query($link, $sentencia2))) {
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+        echo '</p>';
+        exit;
+    	}
+
+    	$fila2 = mysqli_fetch_assoc($resultado2); 
+    						
+    					echo "<article class=foto>";	
+                        echo '<a href="./detalle_foto.php?id='. $fila['idFoto'].'"><img height="220" width="220" src="'. $fila['fichero'] .'" alt="imagen no encontrada" class="foto" /></a>';
+                        
+                        echo '<p><strong>Titulo: </strong> ' . $fila['titulo'] . '</p>';
+                        echo '<p><strong>País: </strong>' . $fila2['nomPais'] . '</p>';
+                        echo '<p><strong>Subida el: </strong>' . $fila['fRegistro'] . '</p>';
+                        echo '<i class="material-icons">access_time</i>Subida hace 4 minutos';
+                        echo '</article>';
+                        
+                        
+                        
+
+    }
+    echo '</div>';
+
+?>
+
+<!-- 
 <div id="container-fotos">
 
 	 <article id="primera-foto" class="foto">
@@ -89,7 +136,7 @@ require_once("inicio.inc");
 	</article>
 
 </div>
-
+-->
 <?php
 require_once("footer.inc");
 ?>
