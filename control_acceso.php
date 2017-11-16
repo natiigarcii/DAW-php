@@ -17,27 +17,29 @@ require_once("inicio.inc");
 
 	// Conecta con el servidor de MySQL
 	$link = @mysqli_connect('localhost','root','admin','pibd');
+
+	// Conecta con el servidor de MySQL
+	$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
 	if(!$link) {
 		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
 		echo '</p>';
-		exit;
-		header('Location: usuario_registrado.php');
+	exit;
 	} 
-
+	// Ejecuta una sentencia SQL
 	$sentencia = 'SELECT nomUsuario , clave FROM usuarios where nomUsuario like "' . $_POST["nombre"] . '"';
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
-		echo "<p>Contraseña incorrecta" . mysqli_error($link);
+		echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
 		echo '</p>';
-		exit;
-		$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
-		header('Location: usuario_registrado.php');
-	}
-	else{
-		$_SESSION["remember"] = $_POST["remember"];
-		$_SESSION["nombre"] = $_POST["nombre"];
-		$_SESSION["psw"] = $_POST["psw"];
-		
-		if(isset($_POST["remember"])){
+	exit;
+
+	while($fila = mysqli_fetch_assoc($resultado)) {
+		if( $fila['nomUsuario'] == $_POST['nombre'] && $fila['clave'] == $_POST['psw'] ){
+			$_SESSION["remember"] = $_POST["remember"];
+			$_SESSION["nombre"] = $_POST["nombre"];
+			$_SESSION["psw"] = $_POST["psw"];
+			$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
+			
+			if(isset($_POST["remember"])){
 				setcookie("nombre", $_POST["nombre"], (time() + 365 * 24 * 60 * 60));
 				setcookie('remember', $_SESSION["remember"], (time() + 365 * 24 * 60 * 60));
 				//setcookie("fechaUltimaVisita", date("d-m-y H:i:s"), (time() + 365 * 24 * 60 * 60));
@@ -50,9 +52,11 @@ require_once("inicio.inc");
 			}
 
 
-		header('Location: usuario_registrado.php');
-		
+			header('Location: usuario_registrado.php');
+			break;
+		}
 	}
+		
 	mysqli_free_result($resultado);
 	mysqli_close($link);
 
