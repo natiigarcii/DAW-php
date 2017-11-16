@@ -15,9 +15,9 @@ require_once("inicio.inc");
 		  <p><label for="pais">País</label>
 		  <select>
 		  <?php
-            /*
+            
               // Conecta con el servidor de MySQL
-              $link = @mysqli_connect('localhost','usuario','contrasenya', 'bd');
+              $link = @mysqli_connect('localhost','root','admin', 'pibd');
               if(!$link) {
                 echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
                 echo '</p>';
@@ -25,22 +25,22 @@ require_once("inicio.inc");
               } 
               // Ejecuta una sentencia SQL
               
-              $sentencia = 'SELECT nombre_pais FROM Paises';
+              $sentencia = 'SELECT nomPais FROM paises order by nomPais asc';
               if(!($resultado = @mysqli_query($link, $sentencia))) {
                 echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
-                echo ’</p>’;
+                echo '</p>';
               exit;
               } 
               
               // Recorre el resultado
               while($fila = mysqli_fetch_assoc($resultado)) {
-              echo '<option value="' . $fila . '">' . $fila . '</option>' ;   
+              echo '<option value="' . $fila['nomPais'] . '">' . $fila['nomPais'] . '</option>' ;   
               }
 
               mysqli_free_result($resultado);
               // Cierra la conexión
               mysqli_close($link);
-            */
+            
             ?>
           </select>
 		  <p> 

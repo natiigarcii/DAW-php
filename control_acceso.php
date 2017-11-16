@@ -13,10 +13,10 @@ require_once("inicio.inc");
 		);
 
 
-/*
+
 
 	// Conecta con el servidor de MySQL
-	$link = @mysqli_connect('localhost','usuario','contrasenya','bd');
+	$link = @mysqli_connect('localhost','root','admin','pibd');
 	if(!$link) {
 		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
 		echo '</p>';
@@ -24,9 +24,9 @@ require_once("inicio.inc");
 		header('Location: usuario_registrado.php');
 	} 
 
-	$sentencia = 'SELECT usuario , contraseña FROM usuarios where usuario =' . $_POST["nombre"] . 'and contraseña = '. $_POST["nombre"];
+	$sentencia = 'SELECT nomUsuario , clave FROM usuarios where nomUsuario like "' . $_POST["nombre"] . '"';
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
-		echo "<p>contraseña incorrecta" . mysqli_error($link);
+		echo "<p>Contraseña incorrecta" . mysqli_error($link);
 		echo '</p>';
 		exit;
 		$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
@@ -51,15 +51,15 @@ require_once("inicio.inc");
 
 
 		header('Location: usuario_registrado.php');
-		break;
+		
 	}
 	mysqli_free_result($resultado);
 	mysqli_close($link);
-*/
 
 
 
-	foreach ($usuarios as $usuario) {
+
+	/*foreach ($usuarios as $usuario) {
 		if(($_POST['nombre']) == $usuario[0] && ($_POST['psw']) == $usuario[1]  ){
 			$_SESSION["remember"] = $_POST["remember"];
 			$_SESSION["nombre"] = $_POST["nombre"];
@@ -86,7 +86,7 @@ require_once("inicio.inc");
 		else{
 		header('Location: inicio.php');		
 		}
-	}
+	}*/
 
 
 require_once("footer.inc");
