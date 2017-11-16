@@ -13,16 +13,12 @@ require_once("inicio.inc");
 		);
 
 
-
-
-	// Conecta con el servidor de MySQL
-	$link = @mysqli_connect('localhost','root','admin','pibd');
-
 	// Conecta con el servidor de MySQL
 	$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
 	if(!$link) {
 		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
 		echo '</p>';
+		header('Location: usuario_registrado.php');
 	exit;
 	} 
 	// Ejecuta una sentencia SQL
@@ -30,6 +26,7 @@ require_once("inicio.inc");
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
 		echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
 		echo '</p>';
+		header('Location: usuario_registrado.php');
 	exit;
 
 	while($fila = mysqli_fetch_assoc($resultado)) {
