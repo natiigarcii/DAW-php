@@ -49,7 +49,7 @@ require_once("inicio.inc");
 
         <p>
           <label for="pais">País de residencia:</label>
-          <select id="pais">
+          <select name="pais" id="pais">
 
             <?php
             

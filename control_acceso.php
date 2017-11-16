@@ -15,7 +15,7 @@ require_once("inicio.inc");
 	exit;
 	} 
 	// Ejecuta una sentencia SQL
-	$sentencia = 'SELECT nomUsuario , clave FROM usuario';
+	$sentencia = 'SELECT nomUsuario , clave FROM usuarios';
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
 		echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
 		echo '</p>';

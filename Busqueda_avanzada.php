@@ -5,7 +5,7 @@ require_once("inicio.inc");
 ?>
 
 <h2>Búsqueda</h2>	
-		<form class="formulario-avanzada" method="post" action="Resultado_busqueda.php">
+		<form id="form_busqueda" class="formulario-avanzada" method="post" action="Resultado_busqueda.php">
 		  <p><label for="titulo">Titulo:</label>
 		  <input type="search" name="titulo" id="titulo"></p>
 
@@ -13,7 +13,8 @@ require_once("inicio.inc");
 		  <input type="date" name="fecha" id="fecha"></p>
 		  
 		  <p><label for="pais">País</label>
-		  <select>
+		  <select name="pais">
+        <option value="">País</option>
 		  <?php
             
               // Conecta con el servidor de MySQL
