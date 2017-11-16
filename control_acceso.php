@@ -4,36 +4,27 @@ $title = "Menú de usuario - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
 
-	
-	$usuarios  = array(
-		array("natalia"	,"natalia"	),
-		array("sergio"	,"pato"		),
-		array("u1"		,"u1"		),
-		array("root"	,"root"		)
-		);
-
+	$check = false;
 
 	// Conecta con el servidor de MySQL
 	$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
 	if(!$link) {
 		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
 		echo '</p>';
-		header('Location: usuario_registrado.php');
+		header('Location: inicio.php');	
 	exit;
 	} 
 	// Ejecuta una sentencia SQL
-	$sentencia = 'SELECT nomUsuario , clave FROM usuarios where nomUsuario like "' . $_POST["nombre"] . '"';
+	$sentencia = 'SELECT nomUsuario , clave FROM usuario';
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
 		echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
 		echo '</p>';
-		header('Location: usuario_registrado.php');
+		header('Location: inicio.php');	
 	exit;
 
 	}
 
 	while($fila = mysqli_fetch_assoc($resultado)) {
-		echo $fila['nomUsuario'];
-		echo $fila['clave'];
 
 		if( $fila['nomUsuario'] == $_POST['nombre'] && $fila['clave'] == $_POST['psw'] ){
 			
@@ -54,12 +45,16 @@ require_once("inicio.inc");
 				setcookie("fechaUltimaVisita"," ",time()-3600); //elimino cookie
 			}
 
-
+			$check = true;
 			header('Location: usuario_registrado.php');
 			break;
 		}
 	}
 		
+	if($check == false){
+		header('Location: inicio.php');	
+	}
+
 	mysqli_free_result($resultado);
 	mysqli_close($link);
 
