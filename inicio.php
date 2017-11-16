@@ -14,8 +14,9 @@ require_once("inicio.inc");
         echo '</p>';
         exit;
     }
+     
+     $sentencia = 'SELECT * from fotos f, paises p where p.idPais = f.pais ORDER BY f.fRegistro DESC LIMIT 5';
 
-     $sentencia = 'SELECT * FROM fotos ORDER BY fRegistro DESC LIMIT 5';
       if (!($resultado = @mysqli_query($link, $sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
         echo '</p>';
@@ -25,24 +26,14 @@ require_once("inicio.inc");
 echo '<div id="container-fotos">';
 
     while ($fila = mysqli_fetch_assoc($resultado)) {
-    	$id = $fila['idFoto'];
-    	$sentencia2 = "SELECT * FROM paises,fotos WHERE idPais = pais AND idFoto = '$id'";
-    	if (!($resultado2 = @mysqli_query($link, $sentencia2))) {
-        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
-        echo '</p>';
-        exit;
-    	}
-
-    	$fila2 = mysqli_fetch_assoc($resultado2); 
-    						
-    					echo "<article class=foto>";	
-                        echo '<a href="./detalle_foto.php?id='. $fila['idFoto'].'"><img height="220" width="220" src="'. $fila['fichero'] .'" alt="imagen no encontrada" class="foto" /></a>';
-                        
-                        echo '<p><strong>Titulo: </strong> ' . $fila['titulo'] . '</p>';
-                        echo '<p><strong>País: </strong>' . $fila2['nomPais'] . '</p>';
-                        echo '<p><strong>Subida el: </strong>' . $fila['fRegistro'] . '</p>';
-                        echo '<i class="material-icons">access_time</i>Subida hace 4 minutos';
-                        echo '</article>';
+    	$id = $fila['idFoto']; 
+    	echo "<article class=foto>";	
+        echo '<a href="./detalle_foto.php?id='. $fila['idFoto'].'"><img src="'. $fila['fichero'] .'" alt="imagen no encontrada" class="foto" /></a>';                        
+        echo '<p><strong>Titulo: </strong> ' . $fila['titulo'] . '</p>';
+        echo '<p><strong>País: </strong>' . $fila['nomPais'] . '</p>';
+        echo '<p><strong>Subida el: </strong>' . $fila['fRegistro'] . '</p>';
+        echo '<i class="material-icons">access_time</i>Subida hace 4 minutos';
+        echo '</article>';
                         
                         
                         
