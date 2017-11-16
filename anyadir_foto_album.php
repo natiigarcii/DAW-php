@@ -113,6 +113,10 @@ if(isset($_SESSION["nombre"])){
 
 <?php
 }
+
+else{
+	header('Location: acceso_denegado.php');
+}
 require_once("footer.inc");
 ?>
 	

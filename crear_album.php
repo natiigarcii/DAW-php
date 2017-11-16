@@ -2,6 +2,8 @@
 $title = "Crear Album - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+
+if(isset($_SESSION["nombre"])){
 ?>
 <h2>Crea tu álbum:</h2>
 <form class="formulario-vertical" method="post">
@@ -57,6 +59,10 @@ require_once("inicio.inc");
     </form> 
 
  <?php
+ }
+else{
+  header('Location: acceso_denegado.php');
+}
 require_once("footer.inc");
 ?>
 	

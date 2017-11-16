@@ -43,7 +43,7 @@ if(isset($_SESSION["nombre"])){
 }
 else{
 
-		header('Location: inicio.php');		
+		header('Location: acceso_denegado.php');		
 		exit;
 
 

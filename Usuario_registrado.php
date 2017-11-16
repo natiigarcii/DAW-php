@@ -2,6 +2,8 @@
 $title = "Inicio - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+
+if(isset($_SESSION["nombre"])){
 ?>
 
 <p><a href="#">Darme de baja</a></p>
@@ -12,6 +14,11 @@ require_once("inicio.inc");
 
 
 <?php
+}
+else{
+	header('Location: acceso_denegado.php');
+}
+
 require_once("footer.inc");
 ?>
 	

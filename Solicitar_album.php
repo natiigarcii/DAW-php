@@ -2,6 +2,7 @@
 $title = "Solicitar album - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+if(isset($_SESSION["nombre"])){
 ?>
 
 <p>En este formulario se contienen los datos necesarios para realizar  un álbum impreso</p>
@@ -148,7 +149,11 @@ require_once("inicio.inc");
 
 		</form>	
 
-		 <?php
+<?php
+		 }
+	else{
+		header('Location: acceso_denegado.php');
+	}
 require_once("footer.inc");
 ?>
 	

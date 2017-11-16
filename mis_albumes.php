@@ -58,6 +58,9 @@ if (isset($_SESSION["nombre"])) {
     mysqli_close($link);
     
 }
+else{
+    header('Location: acceso_denegado.php');
+}
 require_once("footer.inc");
 ?>
    
