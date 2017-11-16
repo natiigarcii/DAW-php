@@ -29,8 +29,14 @@ require_once("inicio.inc");
 		header('Location: usuario_registrado.php');
 	exit;
 
+	}
+
 	while($fila = mysqli_fetch_assoc($resultado)) {
+		echo $fila['nomUsuario'];
+		echo $fila['clave'];
+
 		if( $fila['nomUsuario'] == $_POST['nombre'] && $fila['clave'] == $_POST['psw'] ){
+			
 			$_SESSION["remember"] = $_POST["remember"];
 			$_SESSION["nombre"] = $_POST["nombre"];
 			$_SESSION["psw"] = $_POST["psw"];
