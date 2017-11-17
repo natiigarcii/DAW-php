@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+
 <body>
 	<header id="cabecera-global">
 		<div id="container-logo">
@@ -60,9 +61,8 @@ session_start();
 					<label for="nombre"><b>Usuario</b></label>		 
 					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
 					<?php
-						if (isset($_SESSION['message'])){
-	    					echo $_SESSION['message'];
-	    					unset($_SESSION['message']);
+						if (isset($_GET["check"]) == 1){
+							echo "<p id="psw_incorrecta">Usuario y/o contraseña incorrecta</p>";
 						}
 					?>
 					

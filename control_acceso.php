@@ -31,7 +31,6 @@ require_once("inicio.inc");
 			$_SESSION["remember"] = $_POST["remember"];
 			$_SESSION["nombre"] = $_POST["nombre"];
 			$_SESSION["psw"] = $_POST["psw"];
-			$_SESSION['message'] = 'Usuario y/o contraseña incorrectos';
 			
 			if(isset($_POST["remember"])){
 				setcookie("nombre", $_POST["nombre"], (time() + 365 * 24 * 60 * 60));
@@ -52,7 +51,7 @@ require_once("inicio.inc");
 	}
 		
 	if($check == false){
-		header('Location: inicio.php');	
+		header('Location: inicio.php?check=1');	
 	}
 
 	mysqli_free_result($resultado);
