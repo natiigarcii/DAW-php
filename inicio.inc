@@ -62,7 +62,7 @@ session_start();
 					<input type="text" placeholder="Introduce usuario" name="nombre" id="nombre" required>
 					<?php
 						if (isset($_GET["check"]) == 1){
-							echo "<p id="psw_incorrecta">Usuario y/o contraseña incorrecta</p>";
+							echo '<p id="psw_incorrecta">Usuario y/o contraseña incorrecta</p>';
 						}
 					?>
 					

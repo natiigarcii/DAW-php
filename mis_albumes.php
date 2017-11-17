@@ -5,7 +5,7 @@ require_once("inicio.inc");
 if (isset($_SESSION["nombre"])) {
 ?>
 
-<h2>Mis albumes:</h2>
+<h2 id="h2-registro">Mis albumes:</h2>
 
 <?php
     // Conecta con el servidor de MySQL
@@ -31,7 +31,7 @@ if (isset($_SESSION["nombre"])) {
     
     echo '<table><tr>';
     echo "<th>Id Album</th><th>Título</th><th>Descripcion</th>";
-    echo "<th>Fecha</th><th>Pais</th><th>Usuario</th>";
+    echo "<th>Fecha</th><th>Pais</th><th>Usuario</th><th>Opciones</th>";
     echo '</tr>';
     
     
