@@ -15,6 +15,8 @@ require_once("inicio.inc");
         exit;
     }
      
+     
+
      $sentencia = 'SELECT * from fotos f, paises p where p.idPais = f.pais ORDER BY f.fRegistro DESC LIMIT 5';
 
       if (!($resultado = @mysqli_query($link, $sentencia))) {
