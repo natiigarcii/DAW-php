@@ -7,39 +7,35 @@ $id = $_GET['id'];
 
 if(isset($_SESSION["nombre"])){
 
-	if(($id % 2)!=0){
-	?>
-		<h2>Página detalle foto</h2>
-		<figure class="foto_grande">
-			<img src="img/foto1.jpg" alt="imagen no encontrada">  		
-			<p><strong>Título:</strong> inserte</p>
-			<p><strong>Fecha:</strong> 22/4/2017 </p>
-			<p><strong>País:</strong> inserte </p>
-			<p><strong>Álbum:</strong> inserte </p>
-			<p><strong>Subida por:</strong> inserte </p>
-			Subida hace 4 minutos		
-		</figure>
+ // Conecta con el servidor de MySQL
+    $link = @mysqli_connect('localhost', 'root', 'admin', 'pibd');
+    if (!$link) {
+        echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
+        echo '</p>';
+        exit;
+    }
+    $sentencia = 'SELECT f.titulo f_titulo, f.fichero, a.titulo a_titulo, p.nomPais, u.nomUsuario, f.descripcion, f.fecha  FROM fotos f, paises p, albumes a, usuarios u WHERE f.idFoto = "' . $id . '" and p.idPais = f.pais and f.album = a.idAlbum and a.usuario = u.idUsuario';
+      if (!($resultado = @mysqli_query($link, $sentencia))) {
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+        echo '</p>';
+        exit;
+    }
 
-	<?php
-	}
-	else{
-	?>
+    $fila = mysqli_fetch_assoc($resultado);
 
-	<h2>Página detalle foto</h2>
-		<figure class="foto_grande">
-			<img src="img/foto2.jpg" alt="imagen no encontrada">  		
-			<p><strong>Título:</strong> inserte</p>
-			<p><strong>Fecha:</strong> 22/4/2017 </p>
-			<p><strong>País:</strong> inserte </p>
-			<p><strong>Álbum:</strong> inserte </p>
-			<p><strong>Subida por:</strong> inserte </p>
-			Subida hace 4 minutos		
-		</figure>
+    echo '<h2>Página detalle foto</h2>';
+    echo '<figure class="foto_grande">';
+    echo'<img id="foto_detalle" src="'. $fila['fichero'] . '" alt="imagen no encontrada" /><br>';
+    echo '<p><strong>Título:</strong> '. $fila['f_titulo'] . '</p>';
+    echo '<p><strong>Fecha:</strong> '. $fila['fecha'] . '</p>';
+    echo '<p><strong>País:</strong> '. $fila['nomPais'] . '</p>';
+    echo '<p><strong>Álbum:</strong> '. $fila['a_titulo'] . '</p>';
+    echo '<p><strong>Subida por:</strong> '. $fila['nomUsuario'] . '</p>';
+    echo '<p><strong>Descripcion:</strong> '. $fila['descripcion'] . '</p>';
+    echo '</figure>';
 
 
-
-	?<?php
-	}
+	
 }
 else{
 

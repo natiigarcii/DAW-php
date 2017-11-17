@@ -79,7 +79,7 @@ require_once("inicio.inc");
 	while($fila = mysqli_fetch_assoc($resultado)) {
 		echo ' 
 		<figure class="foto">
-		<a href="Detalle_foto.php?id=11"><img src="' . $fila['fichero'] . '" alt="imagen no encontrada" style="width:175px;height:175px;" ></a>  		
+		<a href="./detalle_foto.php?id='. $fila['idFoto'].'"><img src="'. $fila['fichero'] .'" alt="imagen no encontrada" class="foto" /></a> 		
 		<p><strong>Título:</strong>'. $fila['titulo'] .'</p>
 		<p><strong>Fecha:</strong>'. $fila['fRegistro'] .'</p>
 		<p><strong>País:</strong>'. $fila['nomPais'] .'</p>
