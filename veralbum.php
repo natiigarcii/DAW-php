@@ -18,33 +18,28 @@ if (isset($_SESSION["nombre"])) {
         echo '</p>';
         exit;
     }
+    mysqli_query($link,"SET CHARACTER SET 'utf8'");
+	mysqli_query($link,"SET SESSION collation_connection ='utf8_bin'");
     
-    $sentencia = "SELECT * FROM fotos WHERE Album = '$id'";
+    $sentencia = "SELECT fichero, idFoto, a.titulo a_titulo, f.titulo f_titulo, f.fecha, nomPais FROM fotos f, albumes a, paises p WHERE f.album = '$id' and a.idAlbum=f.album and f.pais=p.idPais";
     if (!($resultado = @mysqli_query($link, $sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
         echo '</p>';
         exit;
     }
     
-    
-    while ($fila = mysqli_fetch_assoc($resultado)) {
-        $aux        = $fila['album']; //auxiliar para mostrar el nombre del Album en vez de su id
-        $sentencia2 = "SELECT * FROM albumes WHERE idAlbum = '$aux' ";
-        if (!($resultado = @mysqli_query($link, $sentencia2))) {
-            echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
-            echo '</p>';
-            exit;
-            
-        }
-        $fila2 = mysqli_fetch_assoc($resultado);
-        
-        
+    echo '<div id="container-fotos">';
+    while ($fila = mysqli_fetch_assoc($resultado)) {               
+        echo "<article class=foto>";
         echo '<a href="./detalle_foto.php?id=' . $fila['idFoto'] . '"><img id="cssvalid" id="' . $fila['idFoto'] . '" src="' . $fila['fichero'] . '" alt="imagen no encontrada" /></a><br>';
-        echo '<strong>Titulo: </strong> ' . $fila['titulo'] . '';
+        echo '<strong>Titulo: </strong> ' . $fila['f_titulo'] . '';
         echo '<br><strong>Fecha: </strong> ' . $fila['fecha'] . '';
-        echo '<br><strong>Album: </strong> ' . $fila2['titulo'] . '';
+        echo '<br><strong>Album: </strong> ' . $fila['a_titulo'] . '';
+        echo '<br><strong>Pais: </strong> ' . $fila['nomPais'] . '';
+        echo '</article>';
         
     }
+    echo '</div>';
     
     // Libera la memoria ocupada por el resultado 
     mysqli_free_result($resultado);
