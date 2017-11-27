@@ -32,9 +32,9 @@ require_once("inicio.inc");
 
         <p id="sexo">
           <label id="label-sexo">Sexo:</label>
-          <label id="label_masculino" for="masculino">Masculino<input type="radio" name="sexo" value="masculino" id="masculino" checked></label>
+          <label id="label_masculino" for="masculino">Masculino<input type="radio" name="sexo" value="1" id="masculino" checked></label>
 
-          <label id="label_femenino" for="femenino">Femenino<input type="radio" name="sexo" value="femenino" id="femenino"></label>
+          <label id="label_femenino" for="femenino">Femenino<input type="radio" name="sexo" value="2" id="femenino"></label>
         </p>
 
         <p>
@@ -55,7 +55,7 @@ require_once("inicio.inc");
 
               // Ejecuta una sentencia SQL
               
-              $sentencia = 'SELECT nomPais FROM paises order by nomPais asc';
+              $sentencia = 'SELECT nomPais, idPais FROM paises order by nomPais asc';
               if(!($resultado = @mysqli_query($link, $sentencia))) {
                 echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
                 echo '</p>';
@@ -64,7 +64,7 @@ require_once("inicio.inc");
               
               // Recorre el resultado
               while($fila = mysqli_fetch_assoc($resultado)) {
-              echo '<option value="' . $fila['nomPais'] . '">' . $fila['nomPais'] . '</option>' ;   
+              echo '<option value="' . $fila['idPais'] . '">' . $fila['nomPais'] . '</option>' ;   
               }
               mysqli_free_result($resultado);
             ?>
@@ -78,7 +78,7 @@ require_once("inicio.inc");
 
         <p>
           <input type="submit" class="enviar-registro" value="Enviar">
-          <input type="submit" class="enviar-registro" value="Cancelar" onclick="window.location.href='Inicio.html'">
+          <input type="submit" class="enviar-registro" value="Cancelar" formaction="inicio.php">
         </p>
      
   </form>

@@ -2,6 +2,7 @@
 $title = "Resgistro respuesta - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+require_once("filtro.inc");
 ?>
 
 <h3>Usuario registrado con los siguientes datos:</h3>
@@ -55,8 +56,17 @@ require_once("inicio.inc");
         </p>
      
   </form>
-
  <?php
+   // Sentencia SQL: inserta un nuevo libro
+  $sentencia = 'INSERT INTO usuarios 
+    VALUES (NULL, "' . $_POST["usuario"] . '","' . $_POST["pwd"] . '","' . $_POST["email"] . '","' . $_POST["sexo"] . '",
+    "' . $_POST["fecha_nacimiento"] . '","' . $_POST["ciudad"] . '","'. $_POST["pais"] .'",
+    "", CURRENT_TIME())';
+  // Ejecuta la sentencia SQL
+  if(!mysqli_query($link, $sentencia)){
+    echo "Error: no se pudo realizar la inserción";
+  }
+
 require_once("footer.inc");
 ?>
 	

@@ -2,7 +2,12 @@
 $title = "Inicio - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+ if( isset($_GET['borrado']) == 1){
+   echo "<h2>Usuario borrado correctamente</h2>";
+  }
 ?>
+
+
 
 <h3 id="cabecera-fotos"> Últimas fotos </h3> 
 

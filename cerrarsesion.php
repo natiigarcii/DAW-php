@@ -5,9 +5,11 @@ session_destroy();
    //setcookie("fechaUltimaVisita"," ",time()-3600); //elimino cookie
    setcookie("nombre"," ",time()-3600); //elimino cookie
    setcookie("fechaUltimaVisita"," ",time()-3600); //elimino cookie
-   header("Location: inicio.php");
   
-
-
-  
+  if( isset($_GET['borrado']) == 1){
+   header("Location: inicio.php?borrado=1");
+  }
+  else{
+  	header("Location: inicio.php");
+  }
 ?>
