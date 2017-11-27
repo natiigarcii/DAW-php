@@ -5,7 +5,7 @@ require_once("inicio.inc");
 if(isset($_SESSION["nombre"])){
 ?>
 
-<p id="d_respuesta">En este formulario se contienen los datos necesarios para realizar  un álbum impreso</p>
+<p>En este formulario se contienen los datos necesarios para realizar  un álbum impreso</p>
 
 <table>
 	<caption><h2>Tarifas</h2></caption>
