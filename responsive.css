@@ -7,6 +7,13 @@ a:link {
     text-decoration: none;
 }
 
+
+#d_respuesta{
+
+    margin-left:  3%;
+    font-style: oblique;
+}
+
 #psw_incorrecta{
     color: red;
 }
@@ -223,10 +230,10 @@ tr:hover {
     background-color: #828282;
 }
 table {
-    text-align: center;
+
     border: 1px solid black;
     text-align: left;
-    margin-left: 10em;
+    margin:0 auto;
     width: 60%;
 }
 

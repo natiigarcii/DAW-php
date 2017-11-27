@@ -7,7 +7,7 @@ $idA = $_GET['idA'];
 if (isset($_SESSION["nombre"])) {
     
 ?>
-<h2 class="cabecera"> Ver album</h2>
+<h2 class="cabecera"> Ver album </h2>
 <form action="detalle_de_foto" method="post">
 <div id="div">
 <?php
