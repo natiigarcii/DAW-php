@@ -29,6 +29,8 @@ require_once("inicio.inc");
               while($fila = mysqli_fetch_assoc($resultado)) {
               echo '<option value="' . $fila['nomPais'] . '">' . $fila['nomPais'] . '</option>' ;   
               }
+              mysqli_free_result($resultado);
+			
             ?>
           </select>
 		  <p> 

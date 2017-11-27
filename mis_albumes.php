@@ -43,7 +43,7 @@ if (isset($_SESSION["nombre"])) {
     }
     
     echo "</table>";
-    
+    mysqli_free_result($resultado);
 }
 else{
     header('Location: acceso_denegado.php');

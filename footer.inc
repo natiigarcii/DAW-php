@@ -1,6 +1,5 @@
 <?php
-		mysqli_free_result($resultado);
-		mysqli_close($link);
+mysqli_close($link);
 ?>
 <footer >
 		  <p>Pickle &copy; 2017 </p>

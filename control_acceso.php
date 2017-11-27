@@ -45,8 +45,7 @@ require_once("inicio.inc");
 	if($check == false){
 		header('Location: inicio.php?check=1');	
 	}
-
-
+mysqli_free_result($resultado);
 
 
 	/*foreach ($usuarios as $usuario) {

@@ -49,7 +49,7 @@ require_once("inicio.inc");
 		</figure>
 		';
 	}
-
+mysqli_free_result($resultado);
 
 
 ?>

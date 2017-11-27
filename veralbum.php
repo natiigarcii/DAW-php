@@ -31,7 +31,7 @@ if (isset($_SESSION["nombre"])) {
         echo '<br><strong>Album: </strong> ' . $fila['a_titulo'] . '';
         echo '<br><strong>Pais: </strong> ' . $fila['nomPais'] . '';
         echo '</article>';
-        
+        mysqli_free_result($resultado);
     }
     echo '</div>';
     

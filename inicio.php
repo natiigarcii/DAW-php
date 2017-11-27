@@ -33,7 +33,7 @@ echo '<div id="container-fotos">';
 
     }
     echo '</div>';
-
+mysqli_free_result($resultado);
 ?>
 
 <!-- 

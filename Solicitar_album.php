@@ -110,7 +110,7 @@ if(isset($_SESSION["nombre"])){
 		              while($fila = mysqli_fetch_assoc($resultado)) {
 		              echo '<option value="' . $fila['titulo'] . '">' . $fila['titulo'] . '</option>' ;   
 		              }
-		            
+		            mysqli_free_result($resultado);
 		            ?>
 		            	</select>
 		           </p>

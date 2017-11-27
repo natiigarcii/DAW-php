@@ -37,6 +37,7 @@ else{
 
 
 }
+mysqli_free_result($resultado);
 	?>
 
 
