@@ -1,3 +1,7 @@
+<?php
+		mysqli_free_result($resultado);
+		mysqli_close($link);
+?>
 <footer >
 		  <p>Pickle &copy; 2017 </p>
 		  <p>Contact information: <a href="mailto:someone@example.com">pikcle@gmail.com</a>.</p>

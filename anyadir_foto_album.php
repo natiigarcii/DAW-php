@@ -31,13 +31,6 @@ if(isset($_SESSION["nombre"])){
 
 		            <?php
 		            
-		              // Conecta con el servidor de MySQL
-		              $link = @mysqli_connect('localhost','root','admin', 'pibd');
-		              if(!$link) {
-		                echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-		                echo '</p>';
-		                exit;
-		              } 
 		              // Ejecuta una sentencia SQL
 		              
 		              $sentencia = 'SELECT nomPais FROM paises order by nomPais asc';
@@ -52,10 +45,6 @@ if(isset($_SESSION["nombre"])){
 		              echo '<option value="' . $fila['nomPais'] . '">' . $fila['nomPais'] . '</option>' ;   
 		              }
 
-		              mysqli_free_result($resultado);
-		              // Cierra la conexión
-		              mysqli_close($link);
-		            
 		            ?>
 		          </select>
 		        </p>
@@ -68,12 +57,6 @@ if(isset($_SESSION["nombre"])){
                 <?php
 		            
 		              // Conecta con el servidor de MySQL
-		              $link = @mysqli_connect('localhost','root','admin', 'pibd');
-		              if(!$link) {
-		                echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-		                echo '</p>';
-		                exit;
-		              } 
 
 		              $aux = $_SESSION["nombre"];
 		              // Ejecuta una sentencia SQL
@@ -90,11 +73,6 @@ if(isset($_SESSION["nombre"])){
 		              while($fila = mysqli_fetch_assoc($resultado)) {
 		              echo '<option value="' . $fila['titulo'] . '">' . $fila['titulo'] . '</option>' ;   
 		              }
-		              
-
-		              mysqli_free_result($resultado);
-		              // Cierra la conexión
-		              mysqli_close($link);
 		            
 		            ?>
 		            	</select>

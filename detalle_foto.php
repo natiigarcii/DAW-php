@@ -7,13 +7,6 @@ $id = $_GET['id'];
 
 if(isset($_SESSION["nombre"])){
 
- // Conecta con el servidor de MySQL
-    $link = @mysqli_connect('localhost', 'root', 'admin', 'pibd');
-    if (!$link) {
-        echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-        echo '</p>';
-        exit;
-    }
     $sentencia = 'SELECT f.titulo f_titulo, f.fichero, a.titulo a_titulo, p.nomPais, u.nomUsuario, f.descripcion, f.fecha  FROM fotos f, paises p, albumes a, usuarios u WHERE f.idFoto = "' . $id . '" and p.idPais = f.pais and f.album = a.idAlbum and a.usuario = u.idUsuario';
       if (!($resultado = @mysqli_query($link, $sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);

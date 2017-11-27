@@ -14,3 +14,11 @@
 	<link rel="stylesheet" type="text/css" href="impresion.css"  media="print"/>
 
 </head>
+<?php
+$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
+	if(!$link) {
+		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
+		echo '</p>';
+	exit;
+} 
+?>

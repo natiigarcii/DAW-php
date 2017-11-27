@@ -8,14 +8,6 @@ if (isset($_SESSION["nombre"])) {
 <h2 id="h2-registro">Mis albumes:</h2>
 
 <?php
-    // Conecta con el servidor de MySQL
-    $link = @mysqli_connect('localhost', 'root', 'admin', 'pibd');
-    if (!$link) {
-        echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-        echo '</p>';
-        exit;
-    }
-    
     $aux = $_SESSION["nombre"];
     
     
@@ -51,11 +43,6 @@ if (isset($_SESSION["nombre"])) {
     }
     
     echo "</table>";
-    
-    // Libera la memoria ocupada por el resultado 
-    mysqli_free_result($resultado);
-    // Cierra la conexión 
-    mysqli_close($link);
     
 }
 else{

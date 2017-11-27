@@ -9,14 +9,6 @@ require_once("inicio.inc");
 
 <?php
 
-	$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
-	if(!$link) {
-		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-		echo '</p>';
-	exit;
-	} 
-
-
 	$sentencia = 'SELECT * from fotos f , paises p where p.idPais = f.pais ';
 	
 	if(($_POST['titulo']) != ""){

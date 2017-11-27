@@ -11,13 +11,7 @@ if (isset($_SESSION["nombre"])) {
 <form action="detalle_de_foto" method="post">
 <div id="div">
 <?php
-    // Conecta con el servidor de MySQL
-    $link = @mysqli_connect('localhost', 'root', 'admin', 'pibd');
-    if (!$link) {
-        echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-        echo '</p>';
-        exit;
-    }
+
     mysqli_query($link,"SET CHARACTER SET 'utf8'");
 	mysqli_query($link,"SET SESSION collation_connection ='utf8_bin'");
     
@@ -40,11 +34,6 @@ if (isset($_SESSION["nombre"])) {
         
     }
     echo '</div>';
-    
-    // Libera la memoria ocupada por el resultado 
-    mysqli_free_result($resultado);
-    // Cierra la conexión 
-    mysqli_close($link);
     
 ?>
 <?php

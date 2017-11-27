@@ -6,16 +6,7 @@ require_once("inicio.inc");
 
 <h3 id="cabecera-fotos"> Últimas fotos </h3> 
 
-<?php
-    // Conecta con el servidor de MySQL
-    $link = @mysqli_connect('localhost', 'root', 'admin', 'pibd');
-    if (!$link) {
-        echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-        echo '</p>';
-        exit;
-    }
-     
-     
+<?php   
 
      $sentencia = 'SELECT * from fotos f, paises p where p.idPais = f.pais ORDER BY f.fRegistro DESC LIMIT 5';
 

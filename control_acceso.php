@@ -6,14 +6,6 @@ require_once("inicio.inc");
 
 	$check = false;
 
-	// Conecta con el servidor de MySQL
-	$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
-	if(!$link) {
-		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
-		echo '</p>';
-		header('Location: inicio.php');	
-	exit;
-	} 
 	// Ejecuta una sentencia SQL
 	$sentencia = 'SELECT nomUsuario , clave FROM usuarios';
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
@@ -53,9 +45,6 @@ require_once("inicio.inc");
 	if($check == false){
 		header('Location: inicio.php?check=1');	
 	}
-
-	mysqli_free_result($resultado);
-	mysqli_close($link);
 
 
 
