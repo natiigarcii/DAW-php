@@ -11,20 +11,15 @@ require_once("filtro.inc");
           <input type="text" name="usuario" id="usuario" disabled value="<?php echo $_POST["usuario"];?>">
         </p>
 
-        <p><label for="pwd">Contraseña:</label> 
-          <input type="password" name="pwd" id="pwd" disabled value="<?php echo $_POST["pwd"];?>">
+        <p><label for="psw">Contraseña:</label> 
+          <input type="password" name="psw" id="psw" disabled value="<?php echo $_POST["psw"];?>">
         </p>
 
-        <p><label for="2pwd">Repite la contraseña:</label>
-          <input type="password" name="2pwd" id="2pwd" disabled value="<?php echo $_POST["2pwd"];?>">
+        <p><label for="psw2">Repite la contraseña:</label>
+          <input type="password" name="psw2" id="psw2" disabled value="<?php echo $_POST["psw2"];?>">
         </p>
 
-        <?php
-          if ($_POST["pwd"] != $_POST["2pwd"]) {
-           
-            header('Location: registro.php?psw=1');
-          }
-        ?>
+        
 
         <p><label for="email">Email:</label>
           <input type="email" name="email" id="email" disabled value="<?php echo $_POST["email"];?>">
@@ -57,15 +52,22 @@ require_once("filtro.inc");
      
   </form>
  <?php
+
+ if($_SESSION["insertar_modificar"] == 1){
+
    // Sentencia SQL: inserta un nuevo libro
   $sentencia = 'INSERT INTO usuarios 
-    VALUES (NULL, "' . $_POST["usuario"] . '","' . $_POST["pwd"] . '","' . $_POST["email"] . '","' . $_POST["sexo"] . '",
+    VALUES (NULL, "' . $_POST["usuario"] . '","' . $_POST["psw"] . '","' . $_POST["email"] . '","' . $_POST["sexo"] . '",
     "' . $_POST["fecha_nacimiento"] . '","' . $_POST["ciudad"] . '","'. $_POST["pais"] .'",
     "", CURRENT_TIME())';
   // Ejecuta la sentencia SQL
   if(!mysqli_query($link, $sentencia)){
     echo "Error: no se pudo realizar la inserción";
   }
+
+}else{
+ // header('Location: Registro.php');
+}
 
 require_once("footer.inc");
 ?>

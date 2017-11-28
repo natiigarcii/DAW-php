@@ -2,6 +2,7 @@
 $title = "Registro - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+
 ?>
 
 <h2 id="h2-registro">Registro</h2>
@@ -10,7 +11,7 @@ require_once("inicio.inc");
 
 
   if( isset($_GET['psw']) == 1){
-    echo '<p class="m_error"> <label for="pwd">  Las contraseñas no coinciden </label> </p>';
+    echo '<p class="m_error"> <label for="psw">  Las contraseñas no coinciden </label> </p>';
   }
 ?>
 	<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
@@ -18,12 +19,12 @@ require_once("inicio.inc");
           <input type="text" name="usuario" id="usuario" required>
         </p>
 
-        <p><label for="pwd">Contraseña:</label> 
-          <input type="password" name="pwd" id="pwd" required >
+        <p><label for="psw">Contraseña:</label> 
+          <input type="password" name="psw" id="psw" required >
         </p>
 
-        <p><label for="2pwd">Repite la contraseña:</label>
-          <input type="password" name="2pwd" id="2pwd" required>
+        <p><label for="psw2">Repite la contraseña:</label>
+          <input type="password" name="psw2" id="psw2" required>
         </p>
 
         <p><label for="email">Email:</label>
