@@ -7,7 +7,7 @@ require_once("inicio.inc");
 	$check = false;
 
 	// Ejecuta una sentencia SQL
-	$sentencia = 'SELECT nomUsuario , clave FROM usuarios';
+	$sentencia = 'SELECT nomUsuario , clave , idUsuario FROM usuarios';
 	if(!($resultado = @mysqli_query($link, $sentencia))) {
 		echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
 		echo '</p>';
@@ -23,6 +23,7 @@ require_once("inicio.inc");
 			$_SESSION["remember"] = $_POST["remember"];
 			$_SESSION["nombre"] = $_POST["nombre"];
 			$_SESSION["psw"] = $_POST["psw"];
+			$_SESSION["id"] = $fila['idUsuario'];
 			
 			if(isset($_POST["remember"])){
 				setcookie("nombre", $_POST["nombre"], (time() + 365 * 24 * 60 * 60));

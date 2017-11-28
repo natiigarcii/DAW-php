@@ -19,8 +19,6 @@ require_once("filtro.inc");
           <input type="password" name="psw2" id="psw2" disabled value="<?php echo $_POST["psw2"];?>">
         </p>
 
-        
-
         <p><label for="email">Email:</label>
           <input type="email" name="email" id="email" disabled value="<?php echo $_POST["email"];?>">
         </p>
@@ -64,6 +62,7 @@ require_once("filtro.inc");
   if(!mysqli_query($link, $sentencia)){
     echo "Error: no se pudo realizar la inserción";
   }
+
 
 }else{
  // header('Location: Registro.php');

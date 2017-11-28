@@ -3,7 +3,6 @@ $title = "Mis álbumes - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
 $id  = $_GET['id'];
-$idA = $_GET['idA'];
 if (isset($_SESSION["nombre"])) {
     
 ?>
@@ -31,10 +30,9 @@ if (isset($_SESSION["nombre"])) {
         echo '<br><strong>Album: </strong> ' . $fila['a_titulo'] . '';
         echo '<br><strong>Pais: </strong> ' . $fila['nomPais'] . '';
         echo '</article>';
-        mysqli_free_result($resultado);
     }
     echo '</div>';
-    
+    mysqli_free_result($resultado);
 ?>
 <?php
 }

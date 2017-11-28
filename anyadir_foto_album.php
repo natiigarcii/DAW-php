@@ -7,23 +7,23 @@ if(isset($_SESSION["nombre"])){
 ?>
 	
  <h2> Añadir foto a álbum</h2>
- <form action="/*" method="post" >
+ <form  method="post" action="anyadir_foto_album_respuesta.php">
  <fieldset id="formulario_vertical">
                 <legend>Añadir foto </legend>
                 <p>
-                <label class="rlabel"><b>Título:</b></label>
+                <label class="label"><b>Título:</b></label>
                 <input type="text"  name="titulo"/>
                 </p>
 
                 <p>
-                <label class="rlabel" for="descripcion"><b>Descripcion:</b></label>
-                <input type="text"  id="descripcion"/>
+                <label class="label" for="descripcion"><b>Descripcion:</b></label>
+                <input type="text"  name="descripcion" id="descripcion"/>
                 </p>
 
-                <p>                
-                <label for="fecha"><b>Fecha:</b></label>
-                <input type="text"  id="fecha"/>
-            	</p>
+                <p>
+         		<label for="fecha_nacimiento">Fecha:</label>
+         		<input type="date" name="fecha" id="fecha" required>
+        		</p>
                 
                <p>
 		          <label for="pais">País de residencia:</label>
@@ -33,7 +33,7 @@ if(isset($_SESSION["nombre"])){
 		            
 		              // Ejecuta una sentencia SQL
 		              
-		              $sentencia = 'SELECT nomPais FROM paises order by nomPais asc';
+		              $sentencia = 'SELECT idPais , nomPais FROM paises order by nomPais asc';
 		              if(!($resultado = @mysqli_query($link, $sentencia))) {
 		                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
 		                echo '</p>';
@@ -42,7 +42,7 @@ if(isset($_SESSION["nombre"])){
 		              
 		              // Recorre el resultado
 		              while($fila = mysqli_fetch_assoc($resultado)) {
-		              echo '<option value="' . $fila['nomPais'] . '">' . $fila['nomPais'] . '</option>' ;   
+		              echo '<option value="' . $fila['idPais'] . '">' . $fila['nomPais'] . '</option>' ;   
 		              }
 
 		              	mysqli_free_result($resultado);
@@ -53,8 +53,8 @@ if(isset($_SESSION["nombre"])){
 
 		      	 
 		        <p>
-		        <label class="rlabel"><b>Albúm:</b></label>
-                <select id="album">
+		        <label class="label"><b>Albúm:</b></label>
+                <select id="album" name="album">
 
                 <?php
 		            
@@ -73,7 +73,7 @@ if(isset($_SESSION["nombre"])){
 		              // Recorre el resultado
 		             
 		              while($fila = mysqli_fetch_assoc($resultado)) {
-		              echo '<option value="' . $fila['titulo'] . '">' . $fila['titulo'] . '</option>' ;   
+		              echo '<option value="' . $fila['idAlbum'] . '">' . $fila['titulo'] . '</option>' ;   
 		              }
 					mysqli_free_result($resultado);
 		            ?>
@@ -87,8 +87,7 @@ if(isset($_SESSION["nombre"])){
         </p>
  </fieldset>
  <p>
-          <input type="submit" class="enviar-registro" value="Enviar">
-          <input type="submit" class="enviar-registro" value="Cancelar" onclick="window.location.href='Inicio.html'">
+          <input type="submit" class="enviar-registro" value="Subir">
         </p>        </form>
 
 <?php

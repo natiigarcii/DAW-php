@@ -102,6 +102,29 @@ if ($_POST["resolucion"] >= 300) {
     </p>
 </form>
 </p>
+
+<?php
+
+if($_POST["color"] == "color"){
+    $color =true;
+}
+if ($_POST["color"] == "blancoynegro") {
+    $color = false;
+}
+
+
+$sentencia = 'INSERT INTO solicitudes
+VALUES (NULL, "' . $_POST["album"] . '","' . $_POST["nombre"] . '","' . $_POST["titulo"] . '","' . $_POST["descripcion"] . '","' . $_POST["email"] .'", "' . $_POST["direccion"] .'","' . $_POST["color-portada"] .'","' . $_POST["cantidad"] .'","' . $_POST["resolucion"] .'","' . $_POST["fecha-recepcion"] .'","' . $color .'", CURRENT_TIME() 
+,"' . $precio_final .'")';
+
+
+  // Ejecuta la sentencia SQL
+  if(!mysqli_query($link, $sentencia)){
+    echo "Error: no se pudo realizar la inserción";
+  }
+  
+?>
+
  <?php
 require_once("footer.inc");
 ?>

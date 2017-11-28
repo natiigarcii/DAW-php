@@ -46,8 +46,8 @@ if(isset($_SESSION["nombre"])){
 		  <p id="label-titulo"><label for="titulo">Titulo del album</label> 
 		  <input type="search" maxlength="200" required name="titulo" id="titulo" placeholder="que lo describa"></p>
 
-		 <p> <label id="label-txt-adicional" for="texto-adicional">Texto adicional</label> 
-		  <textarea maxlength="4000" cols="100" rows="5" name="texto-adicional" id="texto-adicional" placeholder="dedicatoria, descripción de su contenido, etc."> </textarea></p>
+		 <p> <label id="descripcion" for="descripcion">Descripcion:</label> 
+      		<textarea maxlength="4000" cols="100" rows="5" name="descripcion" id="descripcion" placeholder="Descripción de su contenido, etc."> </textarea></p>
 
 		  <p><label for="email">Correo electrónico</label> 
 		  <input type="email" maxlength="200" required name="email" id="email" placeholder="tu email"></p>
@@ -91,7 +91,7 @@ if(isset($_SESSION["nombre"])){
      		</p>
 
      		<p><label>Album de PI</label> 
-     	 	<select id="album" name="pais">
+     	 	<select id="album" name="album">
 
                 <?php
 
@@ -108,7 +108,7 @@ if(isset($_SESSION["nombre"])){
 		              // Recorre el resultado
 		             
 		              while($fila = mysqli_fetch_assoc($resultado)) {
-		              echo '<option value="' . $fila['titulo'] . '">' . $fila['titulo'] . '</option>' ;   
+		              echo '<option value="' . $fila['idAlbum'] . '">' . $fila['titulo'] . '</option>' ;   
 		              }
 		            mysqli_free_result($resultado);
 		            ?>
