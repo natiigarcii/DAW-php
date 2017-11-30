@@ -27,6 +27,9 @@ $sentencia = 'SELECT idUsuario ,nomUsuario , clave FROM usuarios';
   				header('Location: cerrarsesion.php?borrado=1');
   			}
 		}
+		else{
+			header('Location: darse_baja.php?error=1');
+		}
 	}
 ?>
  <?php

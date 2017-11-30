@@ -2,6 +2,10 @@
 $title = "Darse de baja - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+
+ if( isset($_GET['error']) == 1){
+   echo "<h2>Ha habido un error al intentar eliminar su usuario, por favor vuelva a comprobar los datos</h2>";
+  }
 ?>
 
 <h2>Para darte de baja necesitamos comprobar que eres el propietario de esta cuenta</h2>
