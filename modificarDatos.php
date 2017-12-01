@@ -69,7 +69,7 @@ if($_SESSION["insertar_modificar"] == 1){ //significa que todo es correcto y deb
     	$idPais = $fila['idPais'];
     }
     mysqli_free_result($resultado);
-    echo  $_SESSION["id"];
+    
 
   $sentencia = 'UPDATE usuarios SET nomUsuario = "' . $_POST["usuario"] . '", clave = "'. $_POST["psw"] .'", email = "'. $_POST["email"] . '", 
   sexo = "'. $_POST["sexo"] .'", fNacimiento = "'. $_POST["fecha_nacimiento"] .'",ciudad = "'. $_POST["ciudad"] .'",

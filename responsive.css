@@ -274,11 +274,10 @@ footer {
 
 
 #nombre,
-#psw {
-    margin-top: 2%;
+#psw, #psw2 {
     padding-bottom: -2%;
     margin-bottom: 2%;
-    width: 80%;
+    
 }
 #container-registro {
     float: right;
