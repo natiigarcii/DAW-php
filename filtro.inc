@@ -48,15 +48,8 @@ $usuario = $_POST["usuario"];
         $insertar = false;
     }
 
-
     echo $mensajeError;
     $_SESSION["insertar_modificar"] = $insertar;
-    if($insertar!=1){
-    
-      header('Location: mis_datos.php?error=' . $mensajeError); 
-
-
-}
 
 
 

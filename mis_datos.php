@@ -2,7 +2,6 @@
 $title = "Registro - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
-
 ?>
 
 <?php
@@ -46,9 +45,6 @@ require_once("inicio.inc");
             <fieldset id="formulario_registro">
                 <legend>Formulario de registro</legend>
                 <?php
-                if(isset($_GET["error"])){
-                    echo $_GET["error"];
-                }
                     echo '<p><label for="usuario">Usuario:</label>';
                     echo '<input type="text" name="usuario" id="usuario" value="'. $usuario .'"/></p>';                  
                     echo '<p><label for="sexo"">Sexo:</label>';
