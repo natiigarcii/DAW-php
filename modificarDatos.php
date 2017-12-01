@@ -80,5 +80,6 @@ if($_SESSION["insertar_modificar"] == 1){ //significa que todo es correcto y deb
 }
 
 
+
 require_once("footer.inc");
 ?>

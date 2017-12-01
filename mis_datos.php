@@ -2,19 +2,21 @@
 $title = "Registro - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+
 ?>
 
 <?php
  if(isset($_SESSION["nombre"])){
-        $usuario = $_SESSION["nombre"];
+        $id = $_SESSION["id"];
   
-    $sentencia = "SELECT * FROM usuarios WHERE NomUsuario = '$usuario' ";
+    $sentencia = "SELECT * FROM usuarios WHERE idUsuario = '$id' ";
      if (!($resultado = @mysqli_query($link, $sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
         echo '</p>';
         exit;
     }
     $infor = $resultado->fetch_assoc();
+    $usuario = $infor['nomUsuario'];
     $sexo = $infor['sexo'];
     if($sexo == 1){
         $sexo = "hombre";
@@ -44,6 +46,9 @@ require_once("inicio.inc");
             <fieldset id="formulario_registro">
                 <legend>Formulario de registro</legend>
                 <?php
+                if(isset($_GET["error"])){
+                    echo $_GET["error"];
+                }
                     echo '<p><label for="usuario">Usuario:</label>';
                     echo '<input type="text" name="usuario" id="usuario" value="'. $usuario .'"/></p>';                  
                     echo '<p><label for="sexo"">Sexo:</label>';
