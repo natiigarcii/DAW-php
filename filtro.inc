@@ -52,11 +52,14 @@ $usuario = $_POST["usuario"];
     echo $mensajeError;
     $_SESSION["insertar_modificar"] = $insertar;
     if($insertar!=1){
-    
-      header('Location: mis_datos.php?error=' . $mensajeError); 
-
-
-}
+        if ($pag == 1){
+            header('Location: Registro.php?error=' . $mensajeError); 
+        }
+        else{
+            header('Location: mis_datos.php?error=' . $mensajeError); 
+        }
+     
+    }
 
 
 

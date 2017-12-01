@@ -1,5 +1,6 @@
 <?php
 $title = "Registro - Pickle";
+$pag = 2;
 require_once("cabecera.inc");
 require_once("inicio.inc");
 require_once("filtro.inc");
