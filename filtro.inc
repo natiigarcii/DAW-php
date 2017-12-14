@@ -48,6 +48,8 @@ $usuario = $_POST["usuario"];
         $insertar = false;
     }
 
+    
+
 
     echo $mensajeError;
     $_SESSION["insertar_modificar"] = $insertar;

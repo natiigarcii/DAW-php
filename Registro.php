@@ -14,7 +14,7 @@ require_once("inicio.inc");
     echo $_GET["error"];
   }
 ?>
-	<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
+	<form class="formulario-vertical" method="post" action="respuesta_registro.php" enctype="multipart/form-data">      
         <p><label for="usuario"> Nombre de usuario: </label>
           <input type="text" name="usuario" id="usuario" required>
         </p>
@@ -74,7 +74,7 @@ require_once("inicio.inc");
 
         <p>
           <label for="foto_perfil">Foto de perfil:</label>
-          <input type="file" name="foto_perfil" id="foto_perfil">
+          <input type="file" name="foto_perfil" id="foto_perfil" >
         </p>
 
         <p>
