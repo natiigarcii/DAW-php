@@ -42,7 +42,7 @@ require_once("inicio.inc");
 ?>
 
 <h1 class="cabecera">Tus datos son:</h1>
-<form action="modificarDatos.php" class="formulario-vertical" method="post" id="cambio">
+<form action="modificarDatos.php" class="formulario-vertical" method="post" id="cambio" enctype="multipart/form-data">
             <fieldset id="formulario_registro">
                 <legend>Formulario de registro</legend>
                 <?php
@@ -77,8 +77,9 @@ require_once("inicio.inc");
                     echo '<p><label for="email">Correo electrónico:</label>';
                     echo '<input type="email" name="email" value="'. $correo .'" /></p>';
 
-                    echo '<p><label for="foto_perfil">Foto:</label>';
-                    echo '<input type="file" name="foto_perfil" value="'. $foto .'" /></p>';
+                    echo '<p><label for="foto_perfil">Foto:</label></p>';
+                    echo' <p><img id="foto_detalle" src="'. $foto . '" alt="imagen no encontrada"/></p>';
+                    echo '<p><input type="file" name="foto_perfil" value="'. $foto .'" /></p>';
       		
                 ?>               
             </fieldset>

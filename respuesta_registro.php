@@ -100,10 +100,10 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
      
 //SOLO TIENES QUE INSERTAR FOTO AL SERVIDOR QUE ES EL LA RUTA DE NUESTRA FOTO
 
-   // Sentencia SQL: inserta un nuevo libro
+   
   $sentencia = 'INSERT INTO usuarios 
     VALUES (NULL, "' . $_POST["usuario"] . '","' . $_POST["psw"] . '","' . $_POST["email"] . '","' . $_POST["sexo"] . '",
-    "' . $_POST["fecha_nacimiento"] . '","' . $_POST["ciudad"] . '","'. $_POST["pais"] .'","'. $_POST[$foto] .'", CURRENT_TIME())';
+    "' . $_POST["fecha_nacimiento"] . '","' . $_POST["ciudad"] . '","'. $_POST["pais"] .'","'. $foto .'", CURRENT_TIME())';
   // Ejecuta la sentencia SQL
   if(!mysqli_query($link, $sentencia)){
     echo "Error: no se pudo realizar la inserción";
