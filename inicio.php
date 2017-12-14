@@ -41,91 +41,35 @@ echo '<div id="container-fotos">';
 mysqli_free_result($resultado);
 ?>
 
-<!-- 
-<div id="container-fotos">
 
-	 <article id="primera-foto" class="foto">
-		<a href="detalle_foto.php?id=2"><img src="img/foto1.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
+<h3 id="cabecera-fotos"> Fotos seleccionadas </h3> 
 
-	<article class="foto">
-		<a href="detalle_foto.php?id=1"><img src="img/foto2.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
+<?php
+ $fichero = file('./fotosseleccionadas.txt');
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=1"><img src="img/foto3.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=13"><img src="img/foto4.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
+ $fotoElegida = explode('/',$fichero[rand(1 ,count($fichero)-1)]); //convierte string en array
+ 																//y me selecciona una foto random
+ $sentencia = "SELECT * FROM fotos WHERE IdFoto=".$fotoElegida[0];
+ if (!($resultado = @mysqli_query($link, $sentencia))) {
+    echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+    echo '</p>';
+   	exit;
+ }
+ $foto = $resultado->fetch_assoc();
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=19"><img src="img/foto5.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=6"><img src="img/foto6.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=10"><img src="img/foto7.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
+echo "<article class=foto>";	
+       echo '<a href="./detalle_foto.php?id='. $foto['idFoto'].'"><img src="'. $foto['fichero'] .'" alt="imagen no encontrada" class="recsubidas" /></a>';                       
+  		echo '<p><strong>Usuario: </strong> '. $fotoElegida[1] .'</p>';
+        echo '<p><strong>Descripción: </strong> '. $fotoElegida[2] .'</p>';      
+        echo '</article>';
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=17"><img src="img/foto8.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=24"><img src="img/foto9.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
+ ?>
 
-	<article class="foto">
-		<a href="Detalle_foto.php?id=13"><img src="img/foto10.jpg" alt="imagen no encontrada"  ></a>  		
-		<p><strong>Titulo:</strong> inserte</p>
-		<p><strong>Fecha:</strong> 22/4/2017 </p>
-		<p><strong>País:</strong> inserte </p>
-		<i class="material-icons">access_time</i>Subida hace 4 minutos		
-	</article>
 
-</div>
--->
 <?php
 require_once("footer.inc");
 ?>
