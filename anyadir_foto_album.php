@@ -7,7 +7,7 @@ if(isset($_SESSION["nombre"])){
 ?>
 	
  <h2> Añadir foto a álbum</h2>
- <form  method="post" action="anyadir_foto_album_respuesta.php">
+ <form  method="post" action="anyadir_foto_album_respuesta.php" enctype="multipart/form-data">
  <fieldset id="formulario_vertical">
                 <legend>Añadir foto </legend>
                 <p>
@@ -82,7 +82,7 @@ if(isset($_SESSION["nombre"])){
 
 		   <p>
 
-          <label for="foto_perfil">Foto:</label>
+          <label for="foto">Foto:</label>
           <input type="file" name="foto" id="foto">
         </p>
  </fieldset>

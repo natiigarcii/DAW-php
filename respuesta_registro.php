@@ -71,11 +71,13 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
         }
         else
         {
+          /*
         echo "Nombre original: " . $_FILES["foto_perfil"]["name"] . "<br />";
         echo "Tipo: " . $_FILES["foto_perfil"]["type"] . "<br />";
         echo "Tamaño: " . ceil($_FILES["foto_perfil"]["size"] / 1024) . " Kb<br />";
         echo "Nombre temporal: " . $_FILES["foto_perfil"]["tmp_name"] . "<br />";
- 
+        */
+
         if(file_exists('img/'.$_FILES["foto_perfil"]["name"])){
             $i = 1;
             while(file_exists('img/'.$i."_".$_FILES["foto_perfil"]["name"])){
@@ -84,15 +86,15 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
             $_FILES["foto_perfil"]["name"] = $i."_".$_FILES["foto_perfil"]["name"];
             move_uploaded_file($_FILES["foto_perfil"]["tmp_name"],
             "img/" . $_FILES["foto_perfil"]["name"]);
-            echo'El fichero contiene un nombre ya en uso <br/>';
-            echo 'Almacenado con el nombre '. $_FILES["foto_perfil"]["name"];
+            //echo'El fichero contiene un nombre ya en uso <br/>';
+            //echo 'Almacenado con el nombre '. $_FILES["foto_perfil"]["name"];
              
         }
         else
         {
         move_uploaded_file($_FILES["foto_perfil"]["tmp_name"],
         "img/" . $_FILES["foto_perfil"]["name"]);
-        echo "Almacenado en: " . "img/" . $_FILES["foto_perfil"]["name"];
+       // echo "Almacenado en: " . "img/" . $_FILES["foto_perfil"]["name"];
         }
         }
         $foto = "./img/" . $_FILES["foto_perfil"]["name"];
