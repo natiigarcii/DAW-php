@@ -79,6 +79,10 @@ require_once("inicio.inc");
 
                     echo '<p><label for="foto_perfil">Foto:</label></p>';
                     echo' <p><img id="foto_detalle" src="'. $foto . '" alt="imagen no encontrada"/></p>';
+
+                    echo '<p><label for="borrar_foto">Marca si desas borrar esta foto:</label>';
+                    echo '<input type="checkbox" name="borrar_foto" /></p>';
+
                     echo '<p><input type="file" name="foto_perfil" value="'. $foto .'" /></p>';
       		
                 ?>               
