@@ -6,6 +6,18 @@ require_once("inicio.inc");
 require_once("filtro.inc");
 
 
+ $sentencia4 = 'SELECT foto FROM usuarios WHERE idUsuario="' . $_SESSION["id"] . '"';
+        if(!($resultado4 = @mysqli_query($link, $sentencia4))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+                echo '</p>';
+              exit;
+        } 
+
+         $info4 = $resultado4->fetch_assoc();
+
+        $file4 = $info4["foto"];
+
+
 
 ?>
 
@@ -47,7 +59,8 @@ require_once("filtro.inc");
 
         <p>
           <label for="foto_perfil">Foto de perfil:</label>
-          <input type="file" name="foto_perfil" id="foto_perfil" disabled value="<?php echo $_POST["foto_perfil"];?>">
+   <?php echo'<img id="foto_detalle" src="'. $file4 . '" alt="imagen no encontrada" />';?>
+
         </p>
      
   </form>
