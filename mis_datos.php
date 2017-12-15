@@ -78,7 +78,7 @@ require_once("inicio.inc");
                     echo '<input type="email" name="email" value="'. $correo .'" /></p>';
 
                     echo '<p><label for="foto_perfil">Foto:</label></p>';
-                    echo' <p><img id="foto_detalle" src="'. $foto . '" alt="imagen no encontrada"/></p>';
+                    echo' <p><img id="foto_detalle" src="'. $foto . '" alt="No tienes foto de perfil"/></p>';
 
                     echo '<p><label for="borrar_foto">Marca si desas borrar esta foto:</label>';
                     echo '<input type="checkbox" name="borrar_foto" /></p>';

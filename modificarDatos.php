@@ -4,11 +4,14 @@ $pag = 2;
 require_once("cabecera.inc");
 require_once("inicio.inc");
 require_once("filtro.inc");
+
+
+
 ?>
 
 
 
-<h1 class="cabecera">Tus datos son:</h1>
+<h1 class="cabecera">Tus datos modificados son:</h1>
 <form class="formulario-vertical" method="post" action="respuesta_registro.php">      
         <p><label for="usuario"> Nombre de usuario: </label>
           <input type="text" name="usuario" id="usuario" disabled value="<?php echo $_POST["usuario"];?>">
@@ -66,7 +69,7 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
         8 => "La subida del fichero fue detenida por la extensión");
         if($_FILES["foto_perfil"]["error"] > 0)
         {
-        echo "Error: " . $msgError[$_FILES["foto_perfil"]["error"]] . "<br />";
+        // echo "Error: " . $msgError[$_FILES["foto_perfil"]["error"]] . "<br />";
         }
         else
         {
@@ -144,7 +147,30 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
   }
 }
 
+if(isset($_POST["borrar_foto"]) == true){
 
+        $sentencia3 = 'SELECT foto FROM usuarios WHERE idUsuario="' . $_SESSION["id"] . '"';
+        if(!($resultado3 = @mysqli_query($link, $sentencia3))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+                echo '</p>';
+              exit;
+        } 
+
+         $info2 = $resultado3->fetch_assoc();
+
+        $file = $info2["foto"];
+
+
+          unlink($file);
+          $sentencia2 = 'UPDATE usuarios SET foto="" where idUsuario = ' . $_SESSION["id"]; 
+          
+          if(!mysqli_query($link, $sentencia2)){
+            echo "Error: no se pudo realizar el UPDATE";
+          }
+           mysqli_free_result($resultado3);
+
+
+}
 
 require_once("footer.inc");
 ?>
