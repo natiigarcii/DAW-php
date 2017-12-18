@@ -71,6 +71,10 @@ echo "<article class=foto>";
 
 
 <?php
+require_once("grafo.inc");
+?>
+<img src="<?php echo $img_src; ?>" />
+<?php
 require_once("footer.inc");
 ?>
 	
