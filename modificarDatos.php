@@ -5,65 +5,8 @@ require_once("cabecera.inc");
 require_once("inicio.inc");
 require_once("filtro.inc");
 
-
- $sentencia4 = 'SELECT foto FROM usuarios WHERE idUsuario="' . $_SESSION["id"] . '"';
-        if(!($resultado4 = @mysqli_query($link, $sentencia4))) {
-                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
-                echo '</p>';
-              exit;
-        } 
-
-         $info4 = $resultado4->fetch_assoc();
-
-        $file4 = $info4["foto"];
-
-
-
 ?>
 
-
-
-<h1 class="cabecera">Tus datos modificados son:</h1>
-<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
-        <p><label for="usuario"> Nombre de usuario: </label>
-          <input type="text" name="usuario" id="usuario" disabled value="<?php echo $_POST["usuario"];?>">
-        </p>
-
-        <p><label for="psw">Contraseña:</label> 
-          <input type="password" name="psw" id="psw" disabled value="<?php echo $_POST["psw"];?>">
-        </p>
-
-        <p><label for="email">Email:</label>
-          <input type="email" name="email" id="email" disabled value="<?php echo $_POST["email"];?>">
-        </p>
-
-        <p>
-          <label for="sexo-respuesta">Sexo:</label>
-          <input type="text" name="sexo-respuesta" id="sexo-respuesta" disabled value="<?php echo $_POST["sexo"];?>">
-        </p>
-
-        <p>
-         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-         <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" disabled value="<?php echo $_POST["fecha_nacimiento"];?>">
-        </p>
-
-        <p>
-        <label for="ciudad">Ciudad:</label>
-         <input type="text" name="ciudad" id="ciudad"  disabled value="<?php echo $_POST["ciudad"];?>">
-        </p>
-
-        <p>
-          <label for="pais">País de residencia:</label>
-          <input type="text" name="pais" id="pais" disabled value="<?php echo $_POST["pais"];?>">
-        </p>
-
-        <p>
-          <label for="foto_perfil">Foto de perfil:</label>
-   <?php echo'<img id="foto_detalle" src="'. $file4 . '" alt="imagen no encontrada" />';?>
-
-        </p>
-     
-  </form>
 
 
 
@@ -185,5 +128,68 @@ if(isset($_POST["borrar_foto"]) == true){
 
 }
 
+ $sentencia4 = 'SELECT foto FROM usuarios WHERE idUsuario="' . $_SESSION["id"] . '"';
+        if(!($resultado4 = @mysqli_query($link, $sentencia4))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($link);
+                echo '</p>';
+              exit;
+        } 
+
+         $info4 = $resultado4->fetch_assoc();
+
+        $file4 = $info4["foto"];
+
+
+
+
+?>
+
+
+
+<h1 class="cabecera">Tus datos modificados son:</h1>
+<form class="formulario-vertical" method="post" action="respuesta_registro.php">      
+        <p><label for="usuario"> Nombre de usuario: </label>
+          <input type="text" name="usuario" id="usuario" disabled value="<?php echo $_POST["usuario"];?>">
+        </p>
+
+        <p><label for="psw">Contraseña:</label> 
+          <input type="password" name="psw" id="psw" disabled value="<?php echo $_POST["psw"];?>">
+        </p>
+
+        <p><label for="email">Email:</label>
+          <input type="email" name="email" id="email" disabled value="<?php echo $_POST["email"];?>">
+        </p>
+
+        <p>
+          <label for="sexo-respuesta">Sexo:</label>
+          <input type="text" name="sexo-respuesta" id="sexo-respuesta" disabled value="<?php echo $_POST["sexo"];?>">
+        </p>
+
+        <p>
+         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+         <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" disabled value="<?php echo $_POST["fecha_nacimiento"];?>">
+        </p>
+
+        <p>
+        <label for="ciudad">Ciudad:</label>
+         <input type="text" name="ciudad" id="ciudad"  disabled value="<?php echo $_POST["ciudad"];?>">
+        </p>
+
+        <p>
+          <label for="pais">País de residencia:</label>
+          <input type="text" name="pais" id="pais" disabled value="<?php echo $_POST["pais"];?>">
+        </p>
+
+        <p>
+          <label for="foto_perfil">Foto de perfil:</label>
+   <?php echo'<img id="foto_detalle" src="'. $file4 . '" alt="imagen no encontrada" />';?>
+
+        </p>
+     
+  </form>
+
+
+
+<?php
 require_once("footer.inc");
 ?>

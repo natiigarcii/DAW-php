@@ -12,6 +12,7 @@
 	<link rel="alternate stylesheet" type="text/css" href="./accesible.css" title="Estilo de la web accesible">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="impresion.css"  media="print"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="feed.php" />
 
 </head>
 <?php
