@@ -73,7 +73,11 @@ echo "<article class=foto>";
 <?php
 require_once("grafo.inc");
 ?>
+<h3 id="cabecera-graficos"> Gráfico fotos subidas: </h3> 
+
+<p>
 <article class=foto><img id="grafico" src="<?php echo $img_src; ?>" /></article>
+</p>
 <?php
 require_once("footer.inc");
 ?>

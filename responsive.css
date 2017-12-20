@@ -114,6 +114,17 @@ select {
     border-radius: 5px;
 }
 
+#cabecera-graficos{
+    display: block;
+    color: #000307;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 2.3em;
+    background-color: rgb(197, 202, 233);
+    width: 20%;
+    margin-left: 1%;
+    border-radius: 5px;
+}
 
  img {
     margin-bottom: 10%;
