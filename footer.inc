@@ -1,5 +1,6 @@
 <?php
 mysqli_close($link);
+
 ?>
 <footer >
 		  <p>Pickle &copy; 2017 </p>

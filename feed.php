@@ -1,6 +1,13 @@
 <?php
 
-include_once("cabecera.inc");
+
+$link = @mysqli_connect('localhost','root','admin', 'pibd'); 
+	if(!$link) {
+		echo '<p>Error al conectar con la base de datos: ' . mysqli_connect_error();
+		echo '</p>';
+	exit;
+} 
+
 include_once("funciones.php");
 if(isset($_GET["type"])){
     if(strtolower($_GET["type"])=="atom"){
@@ -11,7 +18,7 @@ if(isset($_GET["type"])){
         // Nodo nvl 1 = atom
 		$rss_node = $xml->appendChild($rss);
 		$rss_node->setAttribute("xmlns","http://www.w3.org/2005/Atom");
-		$rss_node->appendChild($xml->createElement("title", "PI"));
+		$rss_node->appendChild($xml->createElement("title", "Pickel"));
         $rss_node->appendChild($xml->createElement("subtitle", "Portal de fotos y álbumes."));
             // Nodo nvl 2 --> atom
             $link_node = $rss_node->appendChild($xml->createElement("link"));
@@ -21,11 +28,10 @@ if(isset($_GET["type"])){
             $link2_node = $rss_node->appendChild($xml->createElement("link"));
             $link2_node->setAttribute("href","inicio.php");
             // Unico ID para cada feed
-            $rss_node->appendChild($xml->createElement("id", uuid("urn:uuid:")));
-            $rss_node->appendChild($xml->createElement("updated", gmdate(DATE_RFC3339, strtotime(date("D, d M Y H:i:s T", time())))));
+            $rss_node->appendChild($xml->createElement("id", uuid("urn:uuid:")));           $rss_node->appendChild($xml->createElement("updated", gmdate(DATE_RFC3339, strtotime(date("D, d M Y H:i:s T", time())))));
         // Query para obtener ultimas 5 fotos
-        $res = mysqli_query($connectDB,"
-        SELECT a.titulo, a.idAlbum, f.titulo as titulo, f.idFoto as id, f.descripcion as descripcion, f.Fecha as fecha, p.nomPais, f.album, f.fRegistro, userName as nombre, userEmail as email
+        $res = mysqli_query($link,"
+        SELECT a.titulo, a.idAlbum, f.titulo as titulo, f.idFoto as id, f.descripcion as descripcion, f.fecha as fecha, p.nomPais, f.album, f.fRegistro, nomUsuario as nombre, email as email
         FROM albumes a, fotos f, usuarios u, paises p
         WHERE a.idAlbum = f.album AND a.usuario = u.idUsuario AND p.idPais = a.pais
         ORDER BY fRegistro DESC
@@ -73,7 +79,7 @@ if(isset($_GET["type"])){
 		$rss_node->setAttribute("xmlns:atom","http://www.w3.org/2005/Atom");
 		$channel = $xml->createElement("channel");
 		$channel_node = $rss_node->appendChild($channel);
-		$channel_node->appendChild($xml->createElement("title", "ZUBBO"));
+		$channel_node->appendChild($xml->createElement("title", "Pickel"));
 		$channel_node->appendChild($xml->createElement("description", "Tus imagenes en la nube."));
 		$channel_node->appendChild($xml->createElement("link", "http://127.0.0.1"));
 		$channel_node->appendChild($xml->createElement("language", "es-es"));
@@ -85,23 +91,23 @@ if(isset($_GET["type"])){
 		$channel_atom_link->setAttribute("type","application/rss+xml");
 		$channel_node->appendChild($channel_atom_link);
 		$image_node = $channel_node->appendChild($xml->createElement("image"));
-		$title_node = $image_node->appendChild($xml->createElement("title", "ZUBBO"));
+		$title_node = $image_node->appendChild($xml->createElement("title", "Pickel"));
 		$url_node = $image_node->appendChild($xml->createElement("url", "logo.jpg"));
 		$lnk_node = $image_node->appendChild($xml->createElement("link", "http://127.0.0.1"));
-		$res = mysqli_query($connectDB,"
-        SELECT a.titulo, a.idAlbum, f.titulo as titulo, f.idFoto as id, f.descripcion as descripcion, f.Fecha as fecha, p.nomPais, f.album, f.fRegistro, userName as nombre, userEmail as email
+		 $res = mysqli_query($link,"
+        SELECT a.titulo, a.idAlbum, f.titulo as titulo, f.idFoto as id, f.descripcion as descripcion, f.fecha as fecha, p.nomPais, f.album, f.fRegistro, nomUsuario as nombre, email as email
         FROM albumes a, fotos f, usuarios u, paises p
         WHERE a.idAlbum = f.album AND a.usuario = u.idUsuario AND p.idPais = a.pais
-        ORDER BY FRegistro DESC
+        ORDER BY fRegistro DESC
         LIMIT 5
         ");
         if ($res){
 			while ($row = mysqli_fetch_assoc($res)){
 				$item_node = $channel_node->appendChild($xml->createElement("item")); //create a new node called "item"
 			    $title_node = $item_node->appendChild($xml->createElement("title", $row["titulo"])); //Add Title under "item"
-			    $link_node = $item_node->appendChild($xml->createElement("link", "http://127.0.0.1/detalle.php?id=".$row["id"])); //add link node under "item"
+			    $link_node = $item_node->appendChild($xml->createElement("link", "detalle_foto.php?id=".$row["id"])); //add link node under "item"
 				//Unique identifier for the item (GUID)
-			    $guid_link = $xml->createElement("guid", "http://127.0.0.1/detalle.php?id=".$row["id"]);
+			    $guid_link = $xml->createElement("guid", "detalle_foto.php?id=".$row["id"]);
 			    $guid_link->setAttribute("isPermaLink","false");
 			    $guid_node = $item_node->appendChild($guid_link);
 			    //create "description" node under "item"
@@ -116,8 +122,8 @@ if(isset($_GET["type"])){
 			}
 		}
 		echo $xml->saveXML();
-	} else error("Ha habido un problema al obtener el feed RSS", $urlLocal."index.php");
+	} else error("Ha habido un problema al obtener el feed RSS", $urlLocal."indice.php");
     
-} else error("Introduce un modo correcto de FEED (atom o RSS)",$urlLocal."index.php");
+} else error("Introduce un modo correcto de FEED (atom o RSS)",$urlLocal."indice.php");
 
 ?>
