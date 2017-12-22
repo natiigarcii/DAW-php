@@ -2,6 +2,7 @@
 $title = "Respuesta Crear Album - Pickle";
 require_once("cabecera.inc");
 require_once("inicio.inc");
+require_once("funciones.php");
 
 if(isset($_SESSION["id"])){
 ?>
@@ -39,6 +40,12 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
             $_FILES["foto"]["name"] = $i."_".$_FILES["foto"]["name"];
             move_uploaded_file($_FILES["foto"]["tmp_name"],
             "img/" . $_FILES["foto"]["name"]);
+
+            $mini = getthumb($_FILES["foto"]["name"], "./img");
+
+            move_uploaded_file($mini, "/img/Thumbs");
+          
+
             //echo'El fichero contiene un nombre ya en uso <br/>';
             //echo 'Almacenado con el nombre '. $_FILES["fotol"]["name"];
              
@@ -47,6 +54,12 @@ $msgError = array(0 => "No hay error, el fichero se subió con éxito",
         {
         move_uploaded_file($_FILES["foto"]["tmp_name"],
         "img/" . $_FILES["foto"]["name"]);
+
+        $mini = getthumb($_FILES["foto"]["name"], "./img");
+
+        move_uploaded_file($mini, "/img/Thumbs");
+
+
         //echo "Almacenado en: " . "img/" . $_FILES["foto"]["name"];
         }
         }

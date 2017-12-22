@@ -68,9 +68,12 @@ $sentencia = "SELECT fichero, idFoto, a.titulo a_titulo, f.titulo f_titulo, f.fe
         exit;
     }
     // Do we have any results?
-    while ($fila = mysqli_fetch_assoc($resultado)) {               
+    while ($fila = mysqli_fetch_assoc($resultado)) {  
+        $explode = explode("/",$fila["fichero"]);
+        $rutathumb = $explode[2];             
         echo "<article class=foto>";
-        echo '<a href="./detalle_foto.php?id=' . $fila['idFoto'] . '"><img id="cssvalid" id="' . $fila['idFoto'] . '" src="' . $fila['fichero'] . '" alt="imagen no encontrada" /></a><br>';
+        echo '<a href="./detalle_foto.php?id=' . $fila['idFoto'] . '"><img id="cssvalid" id="' . $fila['idFoto'] . 
+        '" src="./img/Thumbs/_thumb' . $rutathumb. '" alt="imagen no encontrada" /></a><br>';
         echo '<strong>Titulo: </strong> ' . $fila['f_titulo'] . '';
         echo '<br><strong>Fecha: </strong> ' . $fila['fecha'] . '';
         echo '<br><strong>Album: </strong> ' . $fila['a_titulo'] . '';

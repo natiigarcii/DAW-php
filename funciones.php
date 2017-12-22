@@ -59,7 +59,7 @@
 	    $dst_img = ImageCreateTrueColor($calc_width,$calc_height);
         imagecopyresampled($dst_img,$src_img,0,0,0,0,$calc_width,$calc_height,$x_origen,$y_origen);
         // La guardamos en la siguiente ruta
-        $new_thumb_loc =  "../images/Thumbs/_thumb" . $nombreimg;
+        $new_thumb_loc =  "./img/Thumbs/_thumb" . $nombreimg;
  
         if($mime['mime']=='image/png')
             $result = imagepng($dst_img,$new_thumb_loc,8); 
